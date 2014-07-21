@@ -13,6 +13,9 @@ grunt
 bitrix/templates/main/styles/build
 bitrix/templates/main/scripts/build
 
+.source_of_symbolic_links
+
+
 robots.txt
 
 urlrewrite_.php
