@@ -29,7 +29,9 @@ $(function domReady() {
     require(['pages/nr_materials_detail_moreicons']);
     require(['pages/article_detail_colblocks']);
     require(['pages/two_cols']);
-    require(['pages/contacts']);
+    if($("html").hasClass("contacts")){
+        require(['pages/contacts']);
+    }
     require(['pages/404']);
     if($("html").hasClass("main_page")){
         require(['/bitrix/templates/main/scripts/libs/jquery-mw-min.js']);
