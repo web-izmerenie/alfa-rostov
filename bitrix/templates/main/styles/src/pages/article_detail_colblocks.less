@@ -1,0 +1,77 @@
+/**
+ * article_detail_colblocks page styles
+ *
+ * @author Dmitry Komkov
+ */
+ 
+html.article_detail_colblocks{
+    body{
+        .main_wrapper{
+            .wrapper{
+                .section_standart{
+                    main{
+                        /* width:699px; */
+                        min-width:699px;
+                        max-width:844px;
+                        padding:0 96px;
+                        margin:auto;
+                        color:#fff;
+                        font-size:18px;
+                        line-height:24px;
+                        
+                        .preview_text{
+                            margin:0 0 25px 0;
+                        }
+                        .detail_picture{
+                            margin:0 0 25px 0;
+                            img{
+                                width:100%;
+                                max-width:844px;
+                            }
+                        }
+                        .detail_text{
+                            p{
+                                display:inline-block;
+                                width:49%;
+                                vertical-align:top;
+                                margin-bottom:40px;
+                                
+                                img{
+                                    width:187px;
+                                    height:187px;
+                                    display:block;
+                                    margin:auto;
+                                    border-radius:50%;
+                                    .border-radius(50%);
+                                }
+                            }
+                            p:nth-of-type(even){
+                                width:48%;
+                                margin-left:2%;
+                            }
+                            h3{
+                                text-transform:none;
+                                font-size:26px;
+                                line-height:24px;
+                                margin-bottom:20px;
+                            }
+                            p+h3{
+                                margin-top:37px;
+                            }
+                        }
+                        .large_button{
+                            margin-bottom:45px;
+                            position:relative;
+                            left:50%;
+                        }
+                    } //main
+                } //.section_standart
+                .double_zigzag_wrapper{
+                    &:before{
+                        display:none;
+                    }
+                }
+            }// wrapper
+        }// .main_wrapper
+    }// body
+}// html.nr_materials

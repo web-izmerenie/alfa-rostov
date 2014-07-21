@@ -1,0 +1,21 @@
+/**
+ * Font-faces
+ *
+ * @author Viacheslav Lotsmanov
+ */
+
+// @fileName without extension
+.fontDefine(@fontName, @fileName: @fontName) {
+    font-family: '@{fontName}';
+    src: url('@{fontsPrefix}@{fileName}.eot?v=@{revision}');
+    src: url('@{fontsPrefix}@{fileName}.eot?v=@{revision}#iefix') format('embedded-opentype'),
+         url('@{fontsPrefix}@{fileName}.woff?v=@{revision}') format('woff'),
+         url('@{fontsPrefix}@{fileName}.ttf?v=@{revision}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { .fontDefine('RobotoCondensedBold', 'RobotoCondensedBold'); }
+@font-face { .fontDefine('RobotoCondensedLight', 'RobotoCondensedLight'); }
+@font-face { .fontDefine('RobotoCondensedRegular', 'RobotoCondensedRegular'); }
+@font-face { .fontDefine('RobotoRegular', 'RobotoRegular'); }

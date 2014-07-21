@@ -1,0 +1,45 @@
+/**
+ * contacts page styles
+ *
+ * @author Dmitry Komkov
+ */
+ 
+html.contacts{
+    body{
+        .main_wrapper{
+            .wrapper{
+                .section_standart{
+                    main{
+                        text-align:center;
+                        .box{
+                            text-align:left;
+                            vertical-align:top;
+                            display:inline-block;
+                            margin:0 30px;
+                            
+                            h4{
+                                font-size:20px;
+                            }
+                        }
+                        .map{
+                            height:585px;
+                            margin:50px 0;
+                            opacity: 0.5;
+                            .opacity(0.5);
+                            filter:alpha(opacity=50);
+                            background:#fff;
+                            
+                            &:before{
+                                content: '';
+                                display:block;
+                                width:100%;
+                                clear:both;
+                            }
+                        }
+                    } //main
+                } //.section_standart
+                
+            }// wrapper
+        }// .main_wrapper
+    }// body
+}// html.nr_materials

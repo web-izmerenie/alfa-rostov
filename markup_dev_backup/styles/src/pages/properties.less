@@ -1,0 +1,62 @@
+/**
+ * articles_list page styles
+ *
+ * @author Dmitry Komkov
+ */
+ 
+html.properties{
+    body{
+        .main_wrapper{
+            .wrapper{
+                .section_standart{
+                    main{
+                        color:#fff;
+                        font-size:18px;
+                        
+                        p{
+                            display:inline-block;
+                            width:49%;
+                            vertical-align:top;
+                            margin-bottom:31px;                            
+                        }
+                        h6 + table{
+                            margin-top:31px;
+                        }
+                        p:nth-of-type(even){
+                            width:48%;
+                            margin-left:2%;
+                        }
+                        h2{
+                            margin-bottom:25px;
+                        }
+                        h3{
+                            display:inline-block;
+                            width:100%;
+                            vertical-align:middle;
+                            margin-bottom: 16px;
+                            
+                            &:before,img{
+                                display:inline-block;
+                                width:100%;
+                                vertical-align:middle;
+                            }
+                            img{
+                                width:99px;
+                                height:99px;
+                                border-radius:50%;
+                                .border-radius(50%);
+                                background:url("@{imagesPrefix}header-background.png") 0 0 repeat;
+                                margin-right:12px;
+                                overflow:hidden;
+                            }
+                        }
+                        table, ul{
+                            margin-bottom:31px;
+                        }
+                    } //main
+                } //.section_standart
+                
+            }// wrapper
+        }// .main_wrapper
+    }// body
+}// html.nr_materials

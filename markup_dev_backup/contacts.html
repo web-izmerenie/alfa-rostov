@@ -1,0 +1,84 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" class="contacts">
+<head>
+    <meta charset="utf-8" />
+    <title>Контакты</title>
+    <!--[if lt IE 8]>
+        <meta http-equiv="refresh" content="0; url=/ie_old/ru.html" />
+        <style>.top_side, footer { display: none !important; }</style>
+        <script>throw new Error('IE less than 8');</script>
+    <![endif]-->
+    <!--[if IE 8]>
+        <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="./styles/build/build.css?v=1" />
+    <script src="./scripts/build/build.js?v=1"></script>
+    <script>
+        //<![CDATA[
+            require(['basics/get_val'], function (getVal) {
+
+                getVal.set('lang', 'ru');
+                getVal.set('revision', '1');
+
+                require(['main']);
+
+            });
+        //]]>
+    </script>
+    <!-- Pulled from http://code.google.com/p/html5shiv/ -->
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="main_wrapper">
+        <header>
+            <a href="/" class="logo"></a>
+            <!-- <span class="logo"></span> -->
+            <nav class="top_menu">
+                <ul>
+                    <li><a href="">Нерудные материалы</a></li>
+                    <li><a href="">О компании</a></li>
+                    <li><span>Контакты</span></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class="page_header">
+            	<h1>Контакты</h1>
+            </div>
+            <div class="section_standart section_standart_wide">
+                <main>
+                    <div class="box">
+                        <p>344116<br />г. Ростов-на-Дону<br />ул. 2-я Володарского, 76/23 А<br />офис 112</p>
+                    </div>
+                    <div class="box">
+                        <h4>Call-центр</h4>
+                        <p>(863) 221-80-70</p>
+                        <h4>Факс</h4>
+                        <p>(863) 236-20-50</p>
+                    </div>
+                    <div class="box">
+                        <h4>Отдел продаж</h4>
+                        <p>(863) 221-999-2</p>
+                        <h4>Бухгалтерия</h4>
+                        <p>(863) 231-58-51, 256-555-2</p>
+                    </div>
+                    <div class="box">
+                        <h4>Почта</h4>
+                        <p><a href="mailto:info@alfa-rostov.ru">info@alfa-rostov.ru</a></p>
+                    </div>
+                    <div class="map"></div>
+                </main>
+            </div>            
+        </div>
+        
+    </div> <!-- .main_wrapper -->
+    <footer>
+        <div class="developer">
+            Сделано в <a href="http://web-izmerenie.ru/" target="_blank"></a>
+        </div>
+    </footer>
+</body>
+</html>

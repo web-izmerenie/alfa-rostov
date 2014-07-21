@@ -1,0 +1,95 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" class="two_cols articles_list">
+<head>
+    <meta charset="utf-8" />
+    <title>Статьи</title>
+    <!--[if lt IE 8]>
+        <meta http-equiv="refresh" content="0; url=/ie_old/ru.html" />
+        <style>.top_side, footer { display: none !important; }</style>
+        <script>throw new Error('IE less than 8');</script>
+    <![endif]-->
+    <!--[if IE 8]>
+        <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="./styles/build/build.css?v=1" />
+    <script src="./scripts/build/build.js?v=1"></script>
+    <script>
+        //<![CDATA[
+            require(['basics/get_val'], function (getVal) {
+
+                getVal.set('lang', 'ru');
+                getVal.set('revision', '1');
+
+                require(['main']);
+
+            });
+        //]]>
+    </script>
+    <!-- Pulled from http://code.google.com/p/html5shiv/ -->
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="main_wrapper">
+        <header>
+            <a href="/" class="logo"></a>
+            <!-- <span class="logo"></span> -->
+            <nav class="top_menu">
+                <ul>
+                    <li><a href="">Нерудные материалы</a></li>
+                    <li><a href="">О компании</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class="page_header">
+            	<h1>Статьи</h1>
+            </div>
+            <div class="section_standart">
+                <nav class="left_menu">
+                    <ul>
+                    	<li><a href="">Новости</a></li>
+                    	<li><span>Статьи</span></li>
+                    	<li><a href="">Вакансии</a></li>
+                    </ul>
+                </nav>
+                <main>
+                    <section class="article_item">
+                    	<h3><a href="">Свойства щебня</a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Методы испытания щебня </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Объемная масса щебня </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Окраска щебня </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Карьерный щебень </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Дробимость щебня </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Норма расхода щебня </a></h3>
+                    </section>
+                    <section class="article_item">
+                    	<h3><a href="">Плюсы и минусы работы с заводами и дилерами <br />пример длинного заголовка</a></h3>
+                    </section>
+                </main>
+            </div>          
+        </div>
+        
+    </div> <!-- .main_wrapper -->
+    <footer>
+        <div class="developer">
+            Сделано в <a href="http://web-izmerenie.ru/" target="_blank"></a>
+        </div>
+    </footer>
+</body>
+</html>

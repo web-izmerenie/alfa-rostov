@@ -1,0 +1,90 @@
+/**
+ * two_cols page styles
+ *
+ * @author Dmitry Komkov
+ */
+ 
+html.two_cols{
+    body{
+        .main_wrapper{
+            .wrapper{
+                .section_standart{
+                    position:relative;
+                    min-height:150px;
+                    p{
+                        color:#fff;
+                        font-size:18px;
+                        margin:0 0 35px 0;
+                    }
+                    h2{
+                        text-transform:none;
+                        font-size:30px;
+                        line-height:30px;
+                        font-family: 'RobotoCondensedRegular';
+                        margin:0 0 10px 0;
+                    }
+                    h2+p{
+                        color:@fontColorDefault;
+                        font-size:18px;
+                        line-height:30px;
+                        padding:0 0 0 20px;
+                    }
+                    .rounded_pic{
+                        display:inline-block;
+                        width:100%;
+                        vertical-align:middle;
+                        margin:0 0 35px 0;
+                        
+                        &:before{
+                            content:'';
+                            display:inline-block;
+                            width:100%;
+                            vertical-align:middle;
+                        }
+                        img{
+                            display:inline-block;
+                            vertical-align:middle;
+                            border-radius:50%;
+                            .border-radius(50%);
+                            overflow:hidden;
+                            margin: 0 20px 0 40px;
+                        }
+                        p{
+                            display:inline-block;
+                            vertical-align:middle;
+                            margin:0;
+                        }
+                    } //.rounded_pic
+                    .left_menu{
+                        position:absolute;
+                        left:44px;
+                        top:0;
+                        ul{
+                            text-transform:uppercase;
+                            font-size:18px;
+                            line-height:24px;
+                            li{
+                                margin:0 0 14px 0;
+                                a{
+                                    color:@fontColorDefault;
+                                    text-decoration:none;
+                                    &:hover,&.active{
+                                        color:#fff;
+                                    }
+                                }
+                                span{
+                                    color:#fff;
+                                }
+                            }
+                        }
+                    } //.left_menu                    
+                } //.section_standart
+                .double_zigzag_wrapper{
+                    &:before{
+                        display:none;
+                    }
+                }
+            }// wrapper
+        }// .main_wrapper
+    }// body
+}// html.nr_materials

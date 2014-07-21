@@ -1,0 +1,112 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" class="two_cols vacancy">
+<head>
+    <meta charset="utf-8" />
+    <title>Вакансии</title>
+    <!--[if lt IE 8]>
+        <meta http-equiv="refresh" content="0; url=/ie_old/ru.html" />
+        <style>.top_side, footer { display: none !important; }</style>
+        <script>throw new Error('IE less than 8');</script>
+    <![endif]-->
+    <!--[if IE 8]>
+        <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="./styles/build/build.css?v=1" />
+    <script src="./scripts/build/build.js?v=1"></script>
+    <script>
+        //<![CDATA[
+            require(['basics/get_val'], function (getVal) {
+
+                getVal.set('lang', 'ru');
+                getVal.set('revision', '1');
+
+                require(['main']);
+
+            });
+        //]]>
+    </script>
+    <!-- Pulled from http://code.google.com/p/html5shiv/ -->
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="main_wrapper">
+        <header>
+            <a href="/" class="logo"></a>
+            <!-- <span class="logo"></span> -->
+            <nav class="top_menu">
+                <ul>
+                    <li><a href="">Нерудные материалы</a></li>
+                    <li><a href="">О компании</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="wrapper">
+            <div class="page_header">
+            	<h1>Вакансии</h1>
+            </div>
+            <div class="section_standart">
+                <nav class="left_menu">
+                    <ul>
+                    	<li><a href="">Новости</a></li>
+                    	<li><a href="">Статьи</a></li>
+                    	<li><span>Вакансии</span></li>
+                    </ul>
+                </nav>
+                <main>
+                    <p>ООО «Альфа» — надежный партнер многих строительных предприятий Ростова-на-Дону и области. </p>
+                    <p>Компания постоянно развивается и поэтому мы всегда рады целеустремленным и активным людям, желающим вступить в нашу команду.</p>
+                    <h6>Мы предлагаем:</h6>
+                    <ul>
+                    	<li>Возможность для профессионального и личностного роста</li>
+                        <li>Обучение и работу с качественным продуктом</li>
+                    	<li>Достойный уровень заработной платы и социальные бонусы</li>
+                    </ul>
+                    <p>Отправьте свое резюме на адрес ... или заполните небольшую анкету.</p>
+                    <p>Ваш первый шаг к успешной карьере в ООО «Альфа» сделан!</p>
+                    <section class="vacancy_wrapper">
+                        <h2>Менеджер по продажам</h2>
+                        <h6>Должностные обязанности:</h6>
+                        <ul>
+                        	<li>Работа с существующей клиентской базой и привлечение новых клиентов</li>
+                        	<li>Работа с поставщиками</li>
+                        	<li>Документальное сопровождение продаж</li>
+                        </ul>
+                        <h6>Мы предлагаем:</h6>
+                        <ul>
+                        	<li>Освоить интересную и перспективную профессию</li>
+                        	<li>Получить возможность карьерного роста</li>
+                        	<li>Материальную обеспеченность</li>
+                        </ul>
+                        <h6>От вас требуется:</h6>
+                        <ul>
+                        	<li>Опыт работы</li>
+                        	<li>Желание и потребность активно жить и работать</li>
+                        </ul>
+                        <h6>Мы гарантируем:</h6>
+                        <ul>
+                            <li>Оформление по ТК</li>
+                            <li>Обучение, профессиональный и карьерный рост</li>
+                            <li>Отличные стартовые условия для освоения профессии</li>
+                            <li>Юридическую защиту профессиональной деятельности</li>
+                            <li>Высокую оплату работы (% от сделок+бонусы и премии)</li>
+                            <li>Особое внимание к специалистам, имеющим опыт работы</li>
+                        </ul>
+                        <h6>Тип занятости</h6>
+                        <p class="indent">Полная занятость, полный день</p>
+                    </section>
+                </main>
+            </div>          
+        </div>
+        
+    </div> <!-- .main_wrapper -->
+    <footer>
+        <div class="developer">
+            Сделано в <a href="http://web-izmerenie.ru/" target="_blank"></a>
+        </div>
+    </footer>
+</body>
+</html>

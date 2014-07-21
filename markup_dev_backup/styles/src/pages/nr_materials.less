@@ -1,0 +1,100 @@
+/**
+ * Nr_materials page styles
+ *
+ * @author Dmitry Komkov
+ */
+ 
+html.nr_materials{
+    body{
+        .grid_wrapper{
+            min-width:980px;
+            max-width:1600px;
+            margin:auto;
+            
+            .grid_element{
+                width:254px;
+                min-width:254px !important;
+                display:inline-block;  
+                position:relative;
+                margin-right:12px;
+                margin-left:58px;
+                
+                a{
+                    color:#fff;
+                    font-size:24px;
+                    font-family:'RobotoCondensedBold';
+                    text-transform:uppercase;
+                    text-decoration: none;
+                                        
+                    .grid_element_img{
+                        position:relative;
+                        display:block;
+                        background:url("@{imagesPrefix}grid-shadow.png") 25px 100% no-repeat;
+                        background-size: 229px auto;
+                        .background-size(229px auto);
+                        padding-bottom:9px;
+                        line-height: 0;
+                        
+                        
+                        img{
+                            position:relative;
+                            display:block;
+                            box-sizing: border-box;
+                            .box-sizing(border-box);
+                            border-radius:50%;
+                            .border-radius(50%);
+                            overflow:hidden;
+                            width:218px;
+                            min-width:218px !important;
+                            max-width:280px !important;
+                            height:218px;
+                            min-height:218px !important;
+                            max-height:280px !important;
+                            
+                        }
+                        
+                        span{
+                            position:absolute;
+                            z-index:2;
+                            left:0;
+                            top:0;
+                            box-sizing: border-box;
+                            .box-sizing(border-box);
+                            border-radius:50%;
+                            .border-radius(50%);
+                            width:218px;
+                            min-width:218px !important;
+                            max-width:280px !important;
+                            height:218px;
+                            min-height:218px !important;
+                            max-height:280px !important;
+                            border: 9px solid #fff;
+                            filter: alpha(opacity=0);
+                            opacity: 0;
+                            .opacity(0);
+                            transition: opacity @transitionDuration linear;
+                            .transition(opacity @transitionDuration linear);
+                        }
+                    }
+                    
+                    .grid_element_title{
+                        display:inline-block;
+                        position:relative;
+                    }
+                    
+                    &:hover{
+                        color: #f7d11f;
+                        
+                        .grid_element_img{
+                            span{
+                                filter: alpha(opacity=1);
+                                opacity: 1;
+                                .opacity(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
