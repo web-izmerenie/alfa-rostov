@@ -164,11 +164,12 @@ $(function domReady() {
         var carsCount = 0;
         $weight.val(newweight);
         if(newweight > 30){ 
-            if(newweight <= 40){
+            if(newweight >= 40){
                 $(".main_track").addClass("main_track_40");
-                carsCount = 1;
-            }else{
                 carsCount = Math.ceil(newweight / 40);
+            }else{
+                carsCount = 1;
+                
             }
             $carChange.addClass("cars_40");
         }else{
