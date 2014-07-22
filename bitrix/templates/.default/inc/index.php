@@ -3,7 +3,9 @@
     <div class="slides"><?
         CModule::IncludeModule("iblock");
         $res = CIBlockElement::GetList(
-            array(),
+            array(
+                "SORT" => "asc"
+            ),
             array(
 				"ACTIVE" => "Y",
                 "IBLOCK_TYPE" => "lists",

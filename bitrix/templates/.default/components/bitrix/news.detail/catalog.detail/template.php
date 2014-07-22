@@ -73,13 +73,13 @@
     <img src="/bitrix/templates/main/images/track-detail.png" />
     <h2><?=GetMessage("NEXT_DAY_DELIVERY_LABEL")?></h2>
 </div>
-<div class="calculation">
-    <div class="label">Купив щебень у нас, вы получите</div>
-    <ul>
-        <li>Продукцию отличного качества по ГОСТ’у</li>
-        <li>Быстрый расчет стоимости от 5 до 10 минут</li>
-        <li>Оперативную доставку на следующий день после заказа <br />в необходимом вам объеме от 10 тонн</li>
-    </ul>
+<div class="calculation"><?
+    if($arResult["DISPLAY_PROPERTIES"]["SEO_TITLE"]["VALUE"]){?>
+        <div class="label"><?=$arResult["DISPLAY_PROPERTIES"]["SEO_TITLE"]["VALUE"]?></div><?
+    }?><?
+    if($arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]){?>
+        <?=$arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]["TEXT"]?><?
+    }?>
     <a href="<?=SITE_DIR?>" class="large_button"><?=GetMessage("CALC_BUTTON")?></a>
 </div>
 <div class="double_zigzag_wrapper">

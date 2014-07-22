@@ -25,9 +25,10 @@ $APPLICATION->SetTitle("Контакты");
             <h4>Почта</h4>
             <p><a href="mailto:info@alfa-rostov.ru">info@alfa-rostov.ru</a></p>
         </div>
-        <div class="map" id="map">
+        <?/* <div class="map" id="map">
             
-        </div>
+        </div> */?>
+        <div class="google-map map" id="google-map" ></div>
     </main>
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

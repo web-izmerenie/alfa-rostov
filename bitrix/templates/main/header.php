@@ -43,12 +43,14 @@
         <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="/bitrix/templates/main/styles/build/build.css?v=<?=$revision?>" />
+    <?if(defined("CONTACTS")):?>
+        <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCHuPjTMfHDcczFnfcHNOMPEsI7wqY5A8k&sensor=false"></script>
+    <?endif;?>
     <?$APPLICATION->ShowCSS();?>
     <script src="/bitrix/templates/main/scripts/build/build.js?v=<?=$revision?>"></script>  
     <?$APPLICATION->ShowHeadStrings();?>        
-    <?if(defined("CONTACTS")):?>
-        <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
-    <?endif;?>
+    
     <script>
         //<![CDATA[
             require(['basics/get_val'], function (getVal) {

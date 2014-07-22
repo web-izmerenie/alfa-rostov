@@ -104,6 +104,7 @@ $(function domReady() {
         $.each($points, function(){
             pointCounter++;
             $(this).addClass("calculation_point_" + pointCounter);
+            if(pointCounter == 3) pointCounter = 0;
         });
     }, 500);
     

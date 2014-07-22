@@ -1,6 +1,6 @@
 define(['basics/get_val', 'jquery'], function (getVal, $) {
 $(function domReady() {
-        ymaps.ready(init);
+       /*  ymaps.ready(init);
  
         function init () {
             var myMap = new ymaps.Map('map', {
@@ -17,7 +17,7 @@ $(function domReady() {
 				[47.206730,39.671637] , {
                     hintContent: 'Альфа <br /> г. Ростов-на-Дону ул. 2-я Володарского, 76/23 А офис 112'
                 }, {
-                    iconImageHref: 'http://dev.alfa-rostov.ru/bitrix/templates/main/images/marker.png',
+                    iconImageHref: '/bitrix/templates/main/images/marker.png',
                     iconImageSize: [80, 109],
                     iconImageOffset: [-40, -109]
                     });    
@@ -25,8 +25,25 @@ $(function domReady() {
 				myMap.geoObjects.add(myPlacemark);
  
  
-        }
-   
+        } */
+        function initialize() {
+            var mapOptions = {
+              center: new google.maps.LatLng(47.206730, 39.671637),
+              zoom: 16,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("google-map"),
+                mapOptions);
+                
+            var image = '/bitrix/templates/main/images/marker.png';
+            var myLatLng = new google.maps.LatLng(47.206730, 39.671637);
+            var beachMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: image
+            });
+        } 
+        initialize();
     
 }); // domReady
 }); // define
