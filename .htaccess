@@ -30,3 +30,9 @@ ErrorDocument 404 /404.php
   ExpiresByType text/css "access plus 3 day"
   ExpiresByType application/javascript "access plus 3 day"  
 </IfModule>
+
+Redirect 301 /o-kompanii.html /o-kompanii/
+Redirect 301 /kontaktnaya-informatsiya.html /kontaktnaya-informatsiya/
+Redirect 301 /novosti.html /o-kompanii/novosti/
+Redirect 301 /stati.html /o-kompanii/stati/
+Redirect 301 /svoystva-schebnya.html /o-kompanii/stati/svoystva-shchebnya/
