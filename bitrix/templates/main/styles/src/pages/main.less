@@ -190,14 +190,58 @@ html.main_page {
                     }
                 } //.weight
                 
-                .bailer{
+                .bailer_wrapper{
                     width:116px;
                     height:223px;
                     position:absolute;
                     left:50%;
                     top:40px;
                     margin-left:-58px;
-                    background:url("@{imagesPrefix}bailer.png") 0 0 no-repeat;
+                    background-position:50% 100%;
+                    background-repeat:no-repeat;
+                    
+                    &.bailer_1{
+                        background-image:url("@{imagesPrefix}main_page/bailer_1.png");
+                    }
+                    &.bailer_2{
+                        background-image:url("@{imagesPrefix}main_page/bailer_2.png");
+                    }
+                    &.bailer_3{
+                        background-image:url("@{imagesPrefix}main_page/bailer_3.png");
+                    }
+                    &.bailer_4_21{
+                        background-image:url("@{imagesPrefix}main_page/bailer_4_21.png");
+                    }
+                    &.bailer_4_22{
+                        background-image:url("@{imagesPrefix}main_page/bailer_4_22.png");
+                    }
+                    &.bailer_5{
+                        background-image:url("@{imagesPrefix}main_page/bailer_5.png");
+                    }
+                    &.bailer_6{
+                        background-image:url("@{imagesPrefix}main_page/bailer_6.png");
+                    }
+                    &.bailer_7{
+                        background-image:url("@{imagesPrefix}main_page/bailer_7.png");
+                    }
+                    &.bailer_8_darkgray{
+                        background-image:url("@{imagesPrefix}main_page/bailer_8_darkgray.png");
+                    }
+                    &.bailer_8_grayblue{
+                        background-image:url("@{imagesPrefix}main_page/bailer_8_grayblue.png");
+                    }
+                    &.bailer_8_red{
+                        background-image:url("@{imagesPrefix}main_page/bailer_8_red.png");
+                    }
+                    
+                    .bailer{
+                        width:116px;
+                        height:223px;
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        background:url("@{imagesPrefix}bailer.png") 0 0 no-repeat;
+                    }
                 } //.bailer
                 
                 .rounded{
@@ -209,20 +253,60 @@ html.main_page {
                     border:1px solid #4a4a4a;
                 }
             } //.controls
-            .main_track{
+            .main_track_wrapper{
                 position:relative;
                 top: -50px;
                 margin:auto;
                 margin-bottom:-50px;
                 width:908px;
                 height: 340px;
-                background:url("@{imagesPrefix}main-track-30.png") 50% 0 no-repeat;
+                background-position: 77px 0;
+                background-repeat: no-repeat;
                 
-                &.main_track_40{
-                    background:url("@{imagesPrefix}main-track-40.png") 50% 0 no-repeat;
+                &.texture_1{
+                    background-image:url("@{imagesPrefix}main_page/texture_1.png");
                 }
-            } // .main_track
-            
+                &.texture_2{
+                    background-image:url("@{imagesPrefix}main_page/texture_2.png");
+                }
+                &.texture_3{
+                    background-image:url("@{imagesPrefix}main_page/texture_3.png");
+                }
+                &.texture_4_21{
+                    background-image:url("@{imagesPrefix}main_page/texture_4_21.png");
+                }
+                &.texture_4_22{
+                    background-image:url("@{imagesPrefix}main_page/texture_4_22.png");
+                }
+                &.texture_5{
+                    background-image:url("@{imagesPrefix}main_page/texture_5.png");
+                }
+                &.texture_6{
+                    background-image:url("@{imagesPrefix}main_page/texture_6.png");
+                }
+                &.texture_7{
+                    background-image:url("@{imagesPrefix}main_page/texture_7.png");
+                }
+                &.texture_8_darkgray{
+                    background-image:url("@{imagesPrefix}main_page/texture_8_darkgray.png");
+                }
+                &.texture_8_grayblue{
+                    background-image:url("@{imagesPrefix}main_page/texture_8_grayblue.png");
+                }
+                &.texture_8_red{
+                    background-image:url("@{imagesPrefix}main_page/texture_8_red.png");
+                }
+                
+                .main_track{
+                    width:908px;
+                    height: 340px;
+                    background:url("@{imagesPrefix}main-track-30.png") 50% 0 no-repeat;
+                    
+                    &.main_track_40{
+                        background:url("@{imagesPrefix}main-track-40.png") 50% 0 no-repeat;
+                    }
+                } // .main_track
+            } //.main_track_wrapper
             .form_wrapper{
                 position: relative;
                 min-width: 892px;

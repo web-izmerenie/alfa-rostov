@@ -34,6 +34,20 @@ $(function domReady() {
                 }else{
                     $(".alert").html("");
                 }
+                var bailerClassRemove = $(".bailer_wrapper").attr("class").split(" ")[2];
+                $(".bailer_wrapper").removeClass(bailerClassRemove);
+                $(".bailer_wrapper").addClass(result.BAILER_CLASS);
+                
+                var textureClassRemove = $(".main_track_wrapper").attr("class").split(" ")[1];
+                $(".main_track_wrapper").removeClass(textureClassRemove);
+                $(".main_track_wrapper").addClass(result.TEXTURE_CLASS);
+                //console.log(bailerClasses);
+                //var newbailerClasses = bailerClasses.replace(/bailer_(\d+)(.*)/g, result.BAILER_CLASS);
+                //console.log(newbailerClasses);
+                //$(".bailer_wrapper").attr("class", newbailerClasses); 
+                //var textureClasses = $(".main_track_wrapper").attr("class");
+                // bailer_wrapper
+                // main_track_wrapper
             }
         );          
     }

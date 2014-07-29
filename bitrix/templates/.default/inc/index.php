@@ -47,10 +47,14 @@
         </div>
         <div class="controls_title"><?=GetMessage("WEIGHT")?></div>
     </div>
-    <div class="controls_item bailer"></div>
+    <div class="controls_item bailer_wrapper bailer_8_darkgray">
+        <div class="bailer"></div>
+    </div>
 </div>
-<div class="main_track">
+<div class="main_track_wrapper texture_8_darkgray">
+    <div class="main_track">
 
+    </div>
 </div>
 <div class="form_wrapper">
     <div class="form_inner">
