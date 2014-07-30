@@ -44,7 +44,7 @@ if($_POST["weight"] < 10){
     $_POST["weight"] = 10;
     $result["WEIGHT"] = "1";
 }
-$cube = array(37, 39);
+$cube = array(37, 39, 838, 839, 840, 841);
 $unit = in_array($_POST["id"], $cube) ? "м<sup>3</sup>" : "т";
 $result["UNIT"] = $unit;
 $res = CIBlockElement::GetList(
