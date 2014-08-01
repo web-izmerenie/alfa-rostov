@@ -16,5 +16,12 @@
             <?=GetMessage("DEVELOPER")?>
         </div>
     </footer>
+<?$APPLICATION->IncludeFile(
+    "inc/counter.php",
+    array(),
+    array(
+        "SHOW_BORDER" => false
+     )
+);?>
 </body>
 </html>
