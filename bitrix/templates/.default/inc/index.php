@@ -84,15 +84,18 @@
                     <li data-value="<?=$arDest["ID"]?>"><?=$arDest["NAME"]?></li><?
                 }
             ?>
+                <?/* <li data-value="0"><input type="text" value="<?=GetMessage("ANOTHER")?>" /></li> */?>
             </ul>
-            <input type="hidden" name="destination_point" id="destination_point" value="<?=$arDestCur["VALUE"]?>" />
+            <?/* <input type="hidden" name="destination_point" id="destination_point" value="<?=$arDestCur["VALUE"]?>" /> */?>
+            <input type="hidden" name="destination_point" id="destination_point" value="0" />
             <div class="form_title"><?=GetMessage("FINAL_DESTINATION")?></div>
-            <div class="current_point" data-value="<?=$arDestCur["VALUE"]?>"><span><?=$arDestCur["NAME"]?></span></div>
+            <?/* <div class="current_point" data-value="<?=$arDestCur["VALUE"]?>"><span><?=$arDestCur["NAME"]?></span></div> */?>
+            <div class="current_point" data-value="0"><span><?=GetMessage("ADD_CITY")?></span></div>
         </div>
         <div class="total_price">
             <div class="form_title">Общая стоимость</div>
-            <div class="total_price_value">- <span>руб.</span></div>
-            <div class="price_value">-</div>
+            <div class="total_price_value">0 <span>руб.</span></div>
+            <div class="price_value">0</div>
         </div>
     </div>
     <div class="form_inner form_inner_wrapp">

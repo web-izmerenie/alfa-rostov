@@ -10,4 +10,6 @@ $MESS["CARS_COUNT"] =  "Количество машин";
 $MESS["WEIGHT"] =  "Масса";
 $MESS["FINAL_DESTINATION"] =  "Пункт назначения";
 $MESS["TITLE_BACK"] =  "Назад";
+$MESS["ADD_CITY"] =  "Выберите город";
+$MESS["ANOTHER"] =  "Другой...";
 ?>
