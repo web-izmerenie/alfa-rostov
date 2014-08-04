@@ -24,7 +24,6 @@ $(function domReady() {
                 point: $("#destination_point").val()
             },
             function(data){
-            console.log(data);
                 var result = JSON.parse(data);
                 $(".total_price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
                 $(".price_value").html(result.PRICE + " руб. за тонну");
