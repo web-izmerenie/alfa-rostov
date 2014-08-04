@@ -65,6 +65,7 @@
                         "SORT" => "asc"
                     ),
                     array(
+                        "ACTIVE" => "Y",
                         "IBLOCK_TYPE" => "service",
                         "IBLOCK_CODE" => "destination"
                     ),
