@@ -78,5 +78,5 @@ if($res->SelectedRowsCount()){
     $result["TOTAL_PRICE"] = 0;
     $result["PRICE"] = 0;
 }
- echo json_encode($result);
+ echo json_encode($result); // result
 ?>
