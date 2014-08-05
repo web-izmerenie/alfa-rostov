@@ -40,7 +40,7 @@ $(function domReady() {
                 var textureClassRemove = $(".main_track_wrapper").attr("class").split(" ")[1];
                 $(".main_track_wrapper").removeClass(textureClassRemove);
                 $(".main_track_wrapper").addClass(result.TEXTURE_CLASS);
-                //console.log(bailerClasses);
+                console.log(result);
                 //var newbailerClasses = bailerClasses.replace(/bailer_(\d+)(.*)/g, result.BAILER_CLASS);
                 //console.log(newbailerClasses);
                 //$(".bailer_wrapper").attr("class", newbailerClasses); 
