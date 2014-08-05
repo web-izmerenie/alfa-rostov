@@ -74,9 +74,9 @@ if($res->SelectedRowsCount()){
     $result["TOTAL_PRICE"] = number_format($p["PRICE"]["VALUE"] * $_POST["weight"], 0, '', ' ');
     $result["PRICE"] = $p["PRICE"]["VALUE"];
     
-    
-    echo json_encode($result);
-} else {
-    echo "Ошибка";
+}else{
+    $result["TOTAL_PRICE"] = 0;
+    $result["PRICE"] = 0;
 }
+ echo json_encode($result);
 ?>
