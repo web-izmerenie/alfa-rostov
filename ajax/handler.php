@@ -41,7 +41,6 @@ if(in_array($arElement["IBLOCK_SECTION_ID"], $arAloneElement)){
 
 $_POST["weight"] = (float)$_POST["weight"];
 if($_POST["weight"] < 10){
-    $_POST["weight"] = 10;
     $result["WEIGHT"] = "1";
 }
 $cube = array(37, 39, 838, 839, 840, 841);

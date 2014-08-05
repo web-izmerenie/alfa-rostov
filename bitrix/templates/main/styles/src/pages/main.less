@@ -147,6 +147,10 @@ html.main_page {
                     right:0;
                     top:0;
                     
+                    .rounded{
+                        background:url("@{imagesPrefix}color-round.png") 50% 50% no-repeat;
+                    }
+                    
                     .controls_title{
                         text-align:center;
                     }
@@ -159,14 +163,15 @@ html.main_page {
                         font-family: 'RobotoCondensedBold';
                         
                         input{
-                            width:65px;
+                            width:56px;
                             font-size:30px;
-                            padding-right:10px;
+                            padding-right:0px;
                             color:#fff;
                             font-family: 'RobotoCondensedBold';
                             border:none;
                             background:transparent;
                             text-align:right;
+                            outline:none;
                             
                             &.cursor{
                                 background: url("@{imagesPrefix}cursor.gif") 100% 0 no-repeat;
@@ -185,7 +190,7 @@ html.main_page {
                     }
                     .alert{
                         position: absolute;
-                        top: 96px;
+                        top: -24px;
                         left: 20px;
                     }
                 } //.weight
@@ -409,14 +414,32 @@ html.main_page {
                                 color:#fff;
                                 font-size:38px;
                                 line-height:42px;
+                                height:42px;
                                 font-family:'RobotoCondensedBold';
                                 text-transform:uppercase;
                                 transition:color @transitionDuration linear;
                                 .transition(color @transitionDuration linear);
                                 white-space:nowrap;
+                                padding-left:6px;
                                 
                                 &:hover{
                                     color:#151318;
+                                }
+                                
+                                &.other_city{
+                                    padding:0;
+                                    input{
+                                        width:100%; 
+                                        border:2px solid #b3dae0;
+                                        color:#fff;
+                                        font-size:38px;
+                                        line-height:36px;
+                                        height:43px;
+                                        font-family:'RobotoCondensedBold';
+                                        text-transform:uppercase;
+                                        background:#189bae;
+                                        padding-left: 4px;
+                                    }
                                 }
                             }
                         }//point_list                        
@@ -435,14 +458,25 @@ html.main_page {
                             span{
                                 font-size:31px;
                             }
+                            .other_city_30{
+                                font-size:16px;
+                                line-height:18px;
+                                text-transform:uppercase;
+                            }
                         }
                         .price_value{
-                            background:#d3d3d3;
-                            border-radius:3px;
-                            .border-radius(3px);
+                            background:#58585a;
+                            border-radius:10px;
+                            .border-radius(10px);
                             padding:10px;
                             line-height:16px;
-                            color:#3e3d3c;
+                            color:#fff;
+                            font-size:22px;
+                            
+                            span{
+                                font-size:15px;
+                                text-transform:uppercase;
+                            }
                         }
                     }
                 } //.form_inner 
@@ -482,6 +516,16 @@ html.main_page {
                         }
                         .large_button{margin-top:13px;}
                     } //.main_form
+                    .label_other_city{
+                        text-align:center;
+                        color:#95afb8;
+                        font-size:15px;
+                        text-transform:uppercase;
+                        line-height:18px;
+                        margin-top:10px;
+                        display:none;
+                        
+                    }
                     #showForm{}//.showForm
                 } //.form_inner_wrapp
             }

@@ -12,4 +12,5 @@ $MESS["FINAL_DESTINATION"] =  "Пункт назначения";
 $MESS["TITLE_BACK"] =  "Назад";
 $MESS["ADD_CITY"] =  "Выберите город";
 $MESS["ANOTHER"] =  "Другой...";
+$MESS["LABEL_OTHER_CITY"] =  "Или позвоните по номеру +7 (863) 221-80-70, <br /> и узнайте стоимость сейчас.";
 ?>

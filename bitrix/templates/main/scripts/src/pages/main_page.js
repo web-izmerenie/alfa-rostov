@@ -5,7 +5,7 @@
  * @author Dmitry Komkov
  */
 
-define(['get_val', 'jquery'], function (getVal, $) {    
+define(['get_val', 'jquery', 'libs/jquery-ui'], function (getVal, $) {    
 $(function domReady() {
     //require(['scripts/libs/jquery-mw-min']);
     //require(['scripts/libs/jquerycarousel']);    
@@ -26,7 +26,7 @@ $(function domReady() {
             function(data){
                 var result = JSON.parse(data);
                 $(".total_price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
-                $(".price_value").html(result.PRICE + " руб. за тонну");
+                $(".price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
                 if(result.WEIGHT == 1){
                     $(".alert").html("Не меньше 10 тонн");
@@ -40,13 +40,7 @@ $(function domReady() {
                 var textureClassRemove = $(".main_track_wrapper").attr("class").split(" ")[1];
                 $(".main_track_wrapper").removeClass(textureClassRemove);
                 $(".main_track_wrapper").addClass(result.TEXTURE_CLASS);
-                console.log(result);
-                //var newbailerClasses = bailerClasses.replace(/bailer_(\d+)(.*)/g, result.BAILER_CLASS);
-                //console.log(newbailerClasses);
-                //$(".bailer_wrapper").attr("class", newbailerClasses); 
-                //var textureClasses = $(".main_track_wrapper").attr("class");
-                // bailer_wrapper
-                // main_track_wrapper
+                
             }
         );          
     }
@@ -105,6 +99,22 @@ $(function domReady() {
                 });
             /* }, 100); */
         /* }, 100); */
+        
+        var $slideItem = $("body").find(".slideItem");
+        $.each($slideItem, function(){
+            var newtitle = $(this).attr("data-item-title") + " " + $(this).attr("data-item-promo");
+            
+            if($(this).hasClass("slideItemCenter")) 
+                newtitle = "";
+                
+            $(this).tooltip({
+                "content" : newtitle,
+                "position" : {
+                    "my": "center top", 
+                    "at": "center bottom-8"
+                }
+            });
+        });
     }
     setTimeout(calc, 100);
     function startCarousel(){
@@ -132,6 +142,8 @@ $(function domReady() {
             },
             after: function(){
                 findMainElement();
+                $(".weight_wrapp #weight").val("0");
+                $(".cars_counter").html("0");
                 calc();
             }
         });    
@@ -153,7 +165,7 @@ $(function domReady() {
     $weight = $("body").find("#weight");
     
     $(document).keydown(function(event){        
-        if(event.keyCode == 8 && !$("#name").is(":focus") && !$("#contact").is(":focus")){
+        if(event.keyCode == 8 && !$("#name").is(":focus") && !$("#contact").is(":focus") && !$(".other_city input").is(":focus")){
             $weight.focus();
             $weight.val('');
             return false;
@@ -188,7 +200,8 @@ $(function domReady() {
             }
             $carChange.addClass("cars_40");
         }else{
-            carsCount = 1;
+            
+            carsCount = $(".weight_wrapp #weight").val() === "0" ? 0 : 1;
             $carChange.removeClass("cars_40");
             $(".main_track").removeClass("main_track_40");
         }
@@ -220,13 +233,31 @@ $(function domReady() {
                 container.hide();
             }
         });
-        $(".point_list li").on("click", function(){
-            var title = $(this).text();
-            var value = $(this).attr("data-value");
+        $(".point_list").on("click", "li", function(){
+            if($(this).hasClass("other_city")){
+                $("#showForm").text("Узнать стоимость");
+                $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 30 мин.</div>");
+                $(".label_other_city").show();
+                $(".price_value").hide();
+                $(this).children().val('');
+            }else{
+                $("#showForm").text("Оформить заказ");
+                $(".price_value").show();
+                $(".label_other_city").hide();
+                $(".total_price_value").html("0 <span>руб.</span>");
+                var title = $(this).text();
+                var value = $(this).attr("data-value");
+                $("#destination_point").val(value);
+                $(".current_point span").text(title);
+                $("body").find(".point_list").hide();
+                calc();
+            }
+        });
+        $(".other_city input").keyup(function(){
+            var title = $(this).val();
+            var value = $(this).parent().attr("data-value");
             $("#destination_point").val(value);
             $(".current_point span").text(title);
-            $("body").find(".point_list").hide();
-            calc();
         });
         
     function getInputValue(){
@@ -283,6 +314,13 @@ $(function domReady() {
                             });
                         }
                         if(result.status == "success"){
+                            var obj = $(".main_form").find("input[type=text]");
+                            $.each(obj, function(){
+                                $(this).val($(this).prev("span").text());
+                            });
+                            $(".main_form").slideUp();
+                            $("#showForm").show();
+                            
                             $html = 
                             "<div class='message'>" + 
                                 "<div class='close'></div>" + 
@@ -299,14 +337,11 @@ $(function domReady() {
     );
     $(document).on("click", ".close",  function(){
         $(".message").remove();
-        $(".overlay").hide();
-        var obj = $(".main_form").find("input[type=text]");
-        $.each(obj, function(){
-            $(this).val($(this).prev("span").text());
-        });
-        $(".main_form").slideUp();
-        $("#showForm").show();
+        $(".overlay").hide();        
     });
+    
+    
+    
 }); // domReady
 }); // define
 

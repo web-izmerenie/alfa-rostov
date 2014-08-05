@@ -18,8 +18,22 @@
         while($arRes = $res->GetNextElement()){
             $fields = $arRes->GetFields();
             $props = $arRes->GetProperties();
-            $pic = CFile::GetPath($fields["PREVIEW_PICTURE"]);?>
-            <div data-item-id="<?=$fields["ID"]?>" data-item-title="<?=$fields["NAME"]?>" data-item-promo="<?=$props["PROMO"]["VALUE"]?>" class="slideItem"><img src="<?=$pic?>" /></div><?
+            $pic = CFile::GetPath($fields["PREVIEW_PICTURE"]);
+            $fields["NAME"] = trim($fields["NAME"]);
+            $arName = preg_split("/\s+/", $fields["NAME"]);
+            if(count($arName) > 2){
+                $topName = $arName[0];
+                unset($arName[0]);
+                $bottomName = implode(" ", $arName);
+            }else{
+                $topName = implode(" ", $arName);
+                $bottomName = "";
+            }
+            ?>
+            <div title="" data-item-id="<?=$fields["ID"]?>" data-item-title="<?=$topName?>" data-item-promo="<?=$bottomName?>" class="slideItem">
+                <div class="hover"></div>
+                <img src="<?=$pic?>" />
+            </div><?
         }?>
         
         
@@ -34,13 +48,13 @@
         <div class="rounded">
         
         </div>
-        <div class="cars_counter">1</div>
+        <div class="cars_counter">0</div>
         <div class="controls_title"><?=GetMessage("CARS_COUNT")?></div>
     </div>
     <div class="controls_item weight">
         <div class="rounded">
             <div class="weight_wrapp">
-                <input class="cursor" type="text" value="10" name="weight" id="weight" />
+                <input class="cursor" type="text" value="0" name="weight" id="weight" />
                 <span>т</span>
             </div>
             <div class="alert"></div>
@@ -84,7 +98,7 @@
                     <li data-value="<?=$arDest["ID"]?>"><?=$arDest["NAME"]?></li><?
                 }
             ?>
-                <?/* <li data-value="0"><input type="text" value="<?=GetMessage("ANOTHER")?>" /></li> */?>
+                <li  class="other_city" data-value="0"><input type="text" value="<?=GetMessage("ANOTHER")?>" /></li>
             </ul>
             <?/* <input type="hidden" name="destination_point" id="destination_point" value="<?=$arDestCur["VALUE"]?>" /> */?>
             <input type="hidden" name="destination_point" id="destination_point" value="0" />
@@ -108,6 +122,7 @@
             <input class="large_button" id="sendForm" type="submit" value="Отправить" />
         </div>
         <a href="javascript:void(0)" id="showForm" class="large_button">Оформить заказ</a>
+        <div class="label_other_city"><?=GetMessage("LABEL_OTHER_CITY")?></div>
     </div>
 </div>
      
