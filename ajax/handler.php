@@ -45,7 +45,9 @@ if($_POST["weight"] < 10){
 }
 $cube = array(37, 39, 838, 839, 840, 841);
 $unit = in_array($_POST["id"], $cube) ? "м<sup>3</sup>" : "т";
+$unit_bottom = in_array($_POST["id"], $cube) ? "руб. за куб.м." : "руб. за тонну";
 $result["UNIT"] = $unit;
+$result["UNIT_BOTTOM"] = $unit_bottom;
 $res = CIBlockElement::GetList(
     array(),
     array(
@@ -71,7 +73,7 @@ if($res->SelectedRowsCount()){
     $p = $arRes->GetProperties();
     $f = $arRes->GetFields();
     $result["TOTAL_PRICE"] = number_format($p["PRICE"]["VALUE"] * $_POST["weight"], 0, '', ' ');
-    $result["PRICE"] = $p["PRICE"]["VALUE"];
+    $result["PRICE"] = $_POST["weight"] ? $p["PRICE"]["VALUE"] : 0;
     
 }else{
     $result["TOTAL_PRICE"] = 0;

@@ -28,6 +28,7 @@ $(function domReady() {
                 $(".total_price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
                 $(".price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
+                $(".price_value span").html(result.UNIT_BOTTOM);
                 if(result.WEIGHT == 1){
                     $(".alert").html("Не меньше 10 тонн");
                 }else{
@@ -201,7 +202,7 @@ $(function domReady() {
             $carChange.addClass("cars_40");
         }else{
             
-            carsCount = $(".weight_wrapp #weight").val() === "0" ? 0 : 1;
+            carsCount = $(".weight_wrapp #weight").val() === "0" || $(".weight_wrapp #weight").val() === "" ? 0 : 1;
             $carChange.removeClass("cars_40");
             $(".main_track").removeClass("main_track_40");
         }

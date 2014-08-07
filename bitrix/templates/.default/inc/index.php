@@ -25,6 +25,7 @@
                 $topName = $arName[0];
                 unset($arName[0]);
                 $bottomName = implode(" ", $arName);
+                $bottomName = preg_replace("/(\d+)-(\d+)/", "<span>$1-$2</span>", $bottomName);
             }else{
                 $topName = implode(" ", $arName);
                 $bottomName = "";
