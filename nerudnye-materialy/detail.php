@@ -44,6 +44,8 @@ $APPLICATION->SetTitle("");
 	"PROPERTY_CODE" => array(
 		0 => "SEO_TITLE",
 		1 => "SEO_DESC",
+		2 => "KEYWORDS",
+		3 => "DESCRIPTION"
 	),
 	"IBLOCK_URL" => "",
 	"AJAX_MODE" => "N",

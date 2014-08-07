@@ -56,8 +56,8 @@ $APPLICATION->SetTitle("Статьи");
 		1 => "",
 	),
 	"DETAIL_PROPERTY_CODE" => array(	// Свойства
-		0 => "",
-		1 => "",
+		0 => "KEYWORDS",
+		1 => "DESCRIPTION",
 	),
 	"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
 	"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком

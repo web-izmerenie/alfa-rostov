@@ -38,6 +38,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>" class="<?=$html_classes?>">
 <head>
     <meta charset="utf-8" />
+    <?$APPLICATION->ShowMeta("keywords")?>
+    <?$APPLICATION->ShowMeta("description")?>
     <title><?$APPLICATION->ShowTitle()?></title>
     <!--[if IE 8]>
         <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>

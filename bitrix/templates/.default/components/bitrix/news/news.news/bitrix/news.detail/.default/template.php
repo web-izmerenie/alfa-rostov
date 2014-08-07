@@ -14,3 +14,7 @@ if($arResult["DETAIL_PICTURE"]["SRC"]){?>
     <div class="detail_picture"><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="<?=$arResult["NAME"]?>"></div><?
 }?>
 </div>
+<?
+    $APPLICATION->SetPageProperty("keywords", $arResult["DISPLAY_PROPERTIES"]["KEYWORDS"]["VALUE"]);
+    $APPLICATION->SetPageProperty("description", $arResult["DISPLAY_PROPERTIES"]["DESCRIPTION"]["VALUE"]);
+?>

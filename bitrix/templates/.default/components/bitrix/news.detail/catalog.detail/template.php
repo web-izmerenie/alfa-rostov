@@ -80,8 +80,11 @@
     if($arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]){?>
         <?=$arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]["TEXT"]?><?
     }?>
-    <a href="<?=SITE_DIR?>" class="large_button"><?=GetMessage("CALC_BUTTON")?></a>
+    <span data-link="<?=SITE_DIR?>" class="large_button span_link"><?=GetMessage("CALC_BUTTON")?></span>
 </div>
 <div class="double_zigzag_wrapper">
     <div><?=GetMessage("KRYIM")?></div>
-</div>  
+</div><?
+    $APPLICATION->SetPageProperty("keywords", $arResult["DISPLAY_PROPERTIES"]["KEYWORDS"]["VALUE"]);
+    $APPLICATION->SetPageProperty("description", $arResult["DISPLAY_PROPERTIES"]["DESCRIPTION"]["VALUE"]);
+?>

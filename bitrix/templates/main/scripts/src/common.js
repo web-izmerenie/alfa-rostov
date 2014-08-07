@@ -34,12 +34,16 @@ $(function domReady() {
                 container.hide();
             }
         });
+        $spanlinks = $("body").find(".span_link");
+        $spanlinks.each(
+            function(){
+                $(this).on("click", function(){
+                    var link = $(this).attr("data-link");
+                    window.location.href = link;
+                });
+            }
+        );
     });
     
-    $(function(){
-        /*
-        .on( "scroll", handler )
-        console.log($(window).scrollTop()); */
-    });
 }); // domReady
 }); // define

@@ -126,12 +126,15 @@ html{
                         text-transform: uppercase;
                         margin:0 0 0 26px;
                         
-                        a,span{
+                        a,span,span.span_link{
                             text-decoration: none;
                             color: @fontColorDefault;
                             font-size: 16px;
                             transition: color @transitionDuration linear;
-                            .transition(color @transitionDuration linear);                                
+                            .transition(color @transitionDuration linear); 
+                        &.span_link{
+                            cursor:pointer;
+                        }                            
                             
                             &:hover,&.active{
                                 color: #ffffff;
@@ -140,6 +143,7 @@ html{
                         span{
                             color:#ffffff;
                         }
+                        
                     }
                 } //.top_menu
             } //header  
@@ -243,6 +247,9 @@ html{
                     background:#ffffff;
                     color:#151318;
                 }
+            }
+            .span_link{
+                cursor:pointer;
             }
             a{
                 transition: color @transitionDuration linear, border-color @transitionDuration linear;
