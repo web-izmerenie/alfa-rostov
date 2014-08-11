@@ -237,7 +237,7 @@ $(function domReady() {
         $(".point_list").on("click", "li", function(){
             if($(this).hasClass("other_city")){
                 $("#showForm").text("Узнать стоимость");
-                $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 30 мин.</div>");
+                $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 1 мин.</div>");
                 $(".label_other_city").show();
                 $(".price_value").hide();
                 $(this).children().val('');
