@@ -25,10 +25,10 @@ $(function domReady() {
             },
             function(data){
                 var result = JSON.parse(data);
-                $(".total_price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
-                $(".price_value").html(result.PRICE + " <span>руб. за тонну</span>");
+                $(".price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
+                $(".total_price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
-                $(".price_value span").html(result.UNIT_BOTTOM);
+                $(".total_price_value span").html(result.UNIT_BOTTOM);
                 if(result.WEIGHT == 1){
                     $(".alert").html("Не меньше 10 тонн");
                 }else{
@@ -234,18 +234,26 @@ $(function domReady() {
                 container.hide();
             }
         });
+        $(document).on("keyup", function(e){
+            var container = $(".point_list");
+            if(e.which === 13 && container.css("display") === "block"){                
+                container.hide();
+            }
+        });
         $(".point_list").on("click", "li", function(){
             if($(this).hasClass("other_city")){
                 $("#showForm").text("Узнать стоимость");
                 $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 1 мин.</div>");
                 $(".label_other_city").show();
                 $(".price_value").hide();
-                $(this).children().val('');
+                if($(this).children().val() === 'Другой...'){
+                    $(this).children().val('');
+                }
             }else{
                 $("#showForm").text("Оформить заказ");
-                $(".price_value").show();
+                $(".total_price_value").show();
                 $(".label_other_city").hide();
-                $(".total_price_value").html("0 <span>руб.</span>");
+                $(".price_value").html("0 <span>руб.</span>");
                 var title = $(this).text();
                 var value = $(this).attr("data-value");
                 $("#destination_point").val(value);
@@ -295,7 +303,7 @@ $(function domReady() {
                 var currWeight = $("#weight").val();
                 var name = $("#name").val();
                 var contact = $("#contact").val();
-                var total = $(".total_price_value").html();
+                var total = $(".price_value").html();
                 
                 $.post(
                     "/ajax/mailer.php",

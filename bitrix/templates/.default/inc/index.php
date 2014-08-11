@@ -108,7 +108,7 @@
             <div class="current_point" data-value="0"><span><?=GetMessage("ADD_CITY")?></span></div>
         </div>
         <div class="total_price">
-            <div class="form_title">Общая стоимость</div>
+            <div class="form_title">Стоимость</div>
             <div class="total_price_value">0 <span>руб.</span></div>
             <div class="price_value">0</div>
         </div>

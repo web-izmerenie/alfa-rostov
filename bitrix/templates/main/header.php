@@ -94,12 +94,13 @@
 );?>
             </nav>
         </header>
-        <div class="wrapper"><?
+        <div class="wrapper"><?//var_dump(CSite::GetCurDir());
             if(defined("SHOW_TITLE")){?>
             <div class="page_header"><?
                 if($user_title){?>
             	<h1><?=$user_title?></h1><?
-                }else{?>
+                }else{
+                    ?>
                     <h1><?=$APPLICATION->ShowTitle()?></h1><?
                 }?>
             </div><?
