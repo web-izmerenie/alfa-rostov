@@ -87,4 +87,6 @@
 </div><?
     $APPLICATION->SetPageProperty("keywords", $arResult["DISPLAY_PROPERTIES"]["KEYWORDS"]["VALUE"]);
     $APPLICATION->SetPageProperty("description", $arResult["DISPLAY_PROPERTIES"]["DESCRIPTION"]["VALUE"]);
+    $APPLICATION->SetPageProperty("pagetitle", $arResult["NAME"]);
+    $APPLICATION->SetPageProperty("headertitle", $arResult["DISPLAY_PROPERTIES"]["META_TITLE"]["VALUE"]);
 ?>

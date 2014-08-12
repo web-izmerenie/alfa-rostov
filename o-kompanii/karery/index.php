@@ -3,6 +3,8 @@ define("ARTICLE_DETAIL_COLBLOCKS", "Y");
 define("SHOW_TITLE", "Y");
 define("SHOW_KRYIM_BLOCK", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "Карьеры");
+$APPLICATION->SetPageProperty("headertitle", "Карьеры");
 $APPLICATION->SetTitle("Карьеры");
 ?>
 <div class="section_standart">                

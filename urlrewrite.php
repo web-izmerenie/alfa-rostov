@@ -25,16 +25,16 @@ $arUrlRewrite = array(
 		"PATH" => "/nerudnye-materialy/itemlist.php",
 	),
 	array(
-		"CONDITION" => "#^/o-kompanii.html(.*)#",
-		"RULE" => "CODE=\$1",
-		"ID" => "",
-		"PATH" => "/o-kompanii/index.php",
-	),
-	array(
 		"CONDITION" => "#^/o-kompanii/novosti/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/o-kompanii/novosti/index.php",
+	),
+	array(
+		"CONDITION" => "#^/o-kompanii.html(.*)#",
+		"RULE" => "CODE=\$1",
+		"ID" => "",
+		"PATH" => "/o-kompanii/index.php",
 	),
 	array(
 		"CONDITION" => "#^/o-kompanii/stati/#",

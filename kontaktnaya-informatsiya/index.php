@@ -2,6 +2,8 @@
 define("CONTACTS", "Y");
 define("SHOW_TITLE", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "Контакты");
+$APPLICATION->SetPageProperty("headertitle", "Контакты");
 $APPLICATION->SetTitle("Контакты");
 ?>
 <div class="section_standart section_standart_wide">

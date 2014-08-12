@@ -4,7 +4,7 @@ define("NR_MATERIALS_DETAIL", "Y");
 define("NR_MATERIALS_DETAIL_MOREICONS", "Y");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");
+$APPLICATION->SetTitle("Нерудные материалы");
 ?><?$APPLICATION->IncludeComponent("bitrix:news.detail", "catalog.detail", array(
 	"IBLOCK_TYPE" => "lists",
 	"IBLOCK_ID" => "1",
@@ -45,7 +45,8 @@ $APPLICATION->SetTitle("");
 		0 => "SEO_TITLE",
 		1 => "SEO_DESC",
 		2 => "KEYWORDS",
-		3 => "DESCRIPTION"
+		3 => "DESCRIPTION",
+		4 => "META_TITLE"
 	),
 	"IBLOCK_URL" => "",
 	"AJAX_MODE" => "N",

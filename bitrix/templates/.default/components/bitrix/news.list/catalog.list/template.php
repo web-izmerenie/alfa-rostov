@@ -8,10 +8,11 @@ if(count($arResult["ITEMS"]) == 1){
         array(
             "IBLOCK_TYPE" => "lists",
             "IBLOCK_CODE" => "nr_materials",
+            "IBLOCK_ID" => $arResult["ID"],
             "CODE" => $_REQUEST["CODE"]
         ),
         false,
-        array(),
+        array("UF_*"),
         false
     );
     $arSection = $section->GetNext();
@@ -39,4 +40,5 @@ if(count($arResult["ITEMS"]) == 1){
 <div class="content_text">
     <?=$arSection["DESCRIPTION"]?>
 </div>
-<?$APPLICATION->SetPageProperty("title", $arSection["NAME"]);?>
+<?$APPLICATION->SetPageProperty("pagetitle", $arSection["NAME"]);?>
+<?$APPLICATION->SetPageProperty("headertitle", $arSection["UF_META_TITLE"]);?>

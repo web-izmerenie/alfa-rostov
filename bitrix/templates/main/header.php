@@ -40,7 +40,7 @@
     <meta charset="utf-8" />
     <?$APPLICATION->ShowMeta("keywords")?>
     <?$APPLICATION->ShowMeta("description")?>
-    <title><?$APPLICATION->ShowTitle()?></title>
+    <title><?$APPLICATION->ShowProperty("headertitle")?></title>
     <!--[if IE 8]>
         <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
     <![endif]-->
@@ -94,14 +94,34 @@
 );?>
             </nav>
         </header>
-        <div class="wrapper"><?//var_dump(CSite::GetCurDir());
+        <div class="wrapper"><?  
+            
             if(defined("SHOW_TITLE")){?>
             <div class="page_header"><?
                 if($user_title){?>
             	<h1><?=$user_title?></h1><?
                 }else{
-                    ?>
-                    <h1><?=$APPLICATION->ShowTitle()?></h1><?
+                    
+                    /* if($pagetitle){?>
+                        <h1><?=$pagetitle?></h1><?                    
+                    }else{
+                        $filepath = stripos($_SERVER["PHP_SELF"], "urlrewrite") ? $_SERVER['REAL_FILE_PATH'] : $_SERVER["PHP_SELF"];
+                        
+                        $arFilepath = explode("/", $filepath);
+                        $lastIndex = count($arFilepath) - 1;
+                        if(stripos($arFilepath[$lastIndex], "php")){
+                            unset($arFilepath[$lastIndex]);
+                        }
+                        $filepath = implode("/", $arFilepath) . "/";
+                        
+                        $isInclude = include($_SERVER["DOCUMENT_ROOT"].$filepath.".section.php");
+                        if($isInclude){?>
+                            <h1><?=$sSectionName?></h1><?
+                        }else{?>
+                            <h1><?=$APPLICATION->ShowTitle()?></h1><?
+                        }
+                    } */?>
+                    <h1><?$APPLICATION->ShowProperty("pagetitle")?></h1><?
                 }?>
             </div><?
             }

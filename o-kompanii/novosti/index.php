@@ -4,6 +4,8 @@ define("TWO_COLS", "Y");
 define("ARTICLES_LIST", "Y");
 define("NEWS_LIST", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "Новости");
+$APPLICATION->SetPageProperty("headertitle", "Новости");
 $APPLICATION->SetTitle("Новости");
 ?><?$APPLICATION->IncludeComponent("bitrix:news", "news.news", Array(
 	"IBLOCK_TYPE" => "lists",	// Тип инфоблока
@@ -61,6 +63,7 @@ $APPLICATION->SetTitle("Новости");
 	"DETAIL_PROPERTY_CODE" => array(	// Свойства
 		0 => "KEYWORDS",
 		1 => "DESCRIPTION",
+		2 => "META_TITLE"
 	),
 	"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
 	"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком

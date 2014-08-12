@@ -3,6 +3,8 @@ define("SHOW_TITLE", "Y");
 define("NR_MATERIALS", "Y");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "Нерудные материалы");
+$APPLICATION->SetPageProperty("headertitle", "Нерудные материалы");
 CModule::IncludeModule("iblock");
 $APPLICATION->SetTitle("Нерудные материалы");
 ?>

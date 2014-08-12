@@ -2,6 +2,8 @@
 define("SHOW_TITLE", "Y");
 define("TWO_COLS", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "О компании");
+$APPLICATION->SetPageProperty("headertitle", "О компании");
 $APPLICATION->SetTitle("О компании");
 ?>
 

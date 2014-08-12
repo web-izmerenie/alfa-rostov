@@ -3,6 +3,8 @@ define("SHOW_TITLE", "Y");
 define("TWO_COLS", "Y");
 define("VACANCY", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("pagetitle", "Вакансии");
+$APPLICATION->SetPageProperty("headertitle", "Вакансии");
 $APPLICATION->SetTitle("Вакансии");
 ?><?$APPLICATION->IncludeComponent("bitrix:news.list", "vacancy.news.list", Array(
 	"IBLOCK_TYPE" => "lists",	// Тип информационного блока (используется только для проверки)
