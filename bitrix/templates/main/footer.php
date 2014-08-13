@@ -1,4 +1,8 @@
         <?
+        if(defined("ERROR_404")){
+            CHTTP::SetStatus("404 Not Found");            
+        }?>
+        <?
             if(defined("TWO_COLS")){?>
                     </main>
                 </div><?
