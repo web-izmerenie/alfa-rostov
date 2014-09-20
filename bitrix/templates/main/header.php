@@ -2,7 +2,7 @@
     IncludeTemplateLangFile(__FILE__);
     
     $html_classes = array();
-    $revision = 2;
+    $revision = 3;
     
     if($USER->IsAdmin()){
         $revision = time();
