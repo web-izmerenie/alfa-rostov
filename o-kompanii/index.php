@@ -1,6 +1,7 @@
 <?
 define("SHOW_TITLE", "Y");
 define("TWO_COLS", "Y");
+define("SHOW_KRYIM_BLOCK", "Y");
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("pagetitle", "О компании");
 $APPLICATION->SetPageProperty("headertitle", "О компании");
@@ -8,9 +9,9 @@ $APPLICATION->SetTitle("О компании");
 ?><p>Компания ООО «Альфа» уже более 7&nbsp;лет поставляет щебень, отсев, песок, глину, тырсу, чернозем, керамзит и&nbsp;другие не рудные материалы строительными компаниями Юга России.</p>
 <p>За&nbsp;это время мы&nbsp;стали одной из&nbsp;лидирующих компании на&nbsp;рынке</p>
 <h3>НАШИ ПРЕИМУЩЕСТВА:</h3>
-<ul>
-<li><h3>Доставка от&nbsp;1&nbsp;часа после вашего звонка</h3><img title="image1.png" src="/upload/medialibrary/3d4/3d4b5731410d6124a027fb3cf850a88b.png" alt="image1.png" height="286" width="714"></li>
-<li><h3>Авто от&nbsp;10&nbsp;до&nbsp;50&nbsp;тонн единоразовой отгрузки<img title="image2.jpg" src="/upload/medialibrary/65b/65bc998c0708dfff65a2a817af6506f4.jpg" alt="image2.jpg" height="210" width="447"></h3></li> 
+<ul class="marker">
+<li><h3>Доставка от&nbsp;1&nbsp;часа после вашего звонка</h3><img class="big_img" title="image1.png" src="/upload/medialibrary/3d4/3d4b5731410d6124a027fb3cf850a88b.png" alt="image1.png" height="286" width="714"></li>
+<li><h3>Авто от&nbsp;10&nbsp;до&nbsp;50&nbsp;тонн единоразовой отгрузки</h3><img title="image2.jpg" src="/upload/medialibrary/65b/65bc998c0708dfff65a2a817af6506f4.jpg" alt="image2.jpg" height="210" width="447"></li> 
 <li><h3>Продукция за&nbsp;любые деньги</h3><img title="image3.jpg" src="/upload/medialibrary/75a/75a05448613b16d742329ac9f2a04879.jpg" alt="image3.jpg" height="307" width="350"></li>
 <li><h3>Мы&nbsp;на&nbsp;связи круглосуточно,<br> звоните в&nbsp;любое время&nbsp;— (863)221-80-70</h3><img title="image4.jpg" src="/upload/medialibrary/f2d/f2d1df962add2b26476d3881ce008a11.jpg" alt="image4.jpg" height="266" width="556"></li>
 <li>Мы&nbsp;смогли наладить лучшую логистику напрямую от&nbsp;карьера до&nbsp;вашего<br>
@@ -26,7 +27,10 @@ $APPLICATION->SetTitle("О компании");
 <li>Переговоры о&nbsp;цене уместны, скидки возможны. И&nbsp;это оценили наши<br>
 постоянные покупатели.</li>
 </ul>
+<div class="painted_director">
 <h3>Звоните нам сейчас!<br>
 Лучшее предложение по&nbsp;ЮФО.<br>
 Будем рады вам помочь.</h3>
-<p>Директор Вячеслав Бородай</p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<p>Директор Вячеслав Бородай</p><img title="image5.jpg" src="/upload/medialibrary/96f/96f214652d96037e77726f8d3c59eec4.jpg" alt="image5.jpg" height="214" width="104">
+</div>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
