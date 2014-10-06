@@ -1,5 +1,5 @@
 <?header('Content-Type: text/plain; charset=utf-8')?>
-<?if($_SERVER['HTTP_HOST'] !== 'alfa-rostov.ru'):?>
+<?if($_SERVER['HTTP_HOST'] !== 'alfa-rostov.ru' && $_SERVER['HTTP_HOST'] !== 'www.alfa-rostov.ru'):?>
 User-Agent: *
 Disallow: /
 <?else:?>
@@ -8,5 +8,5 @@ Allow: /bitrix/templates/
 Disallow: /bitrix/
 Disallow: /node_modules/
 Disallow: /ie_old/
-Host: alfa-rostov.ru
+Host: www.alfa-rostov.ru
 <?endif?>
