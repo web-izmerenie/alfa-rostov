@@ -54,6 +54,12 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/o-kompanii/stati/index.php",
 	),
+	array(
+		"CONDITION" => "#^/robots.txt(\\?|\$)#",
+		"RULE" => "",
+		"ID" => "",
+		"PATH" => "/robots.php",
+	),
 );
 
 ?>
