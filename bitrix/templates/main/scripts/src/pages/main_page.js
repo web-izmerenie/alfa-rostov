@@ -25,26 +25,32 @@ $(function domReady() {
             },
             function(data){
                 var result = JSON.parse(data);
-                $(".price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
+                $(".price_value").html("<span>Итого: </span>" + result.TOTAL_PRICE + " <span>руб.</span>");
                 $(".total_price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
                 $(".total_price_value span").html(result.UNIT_BOTTOM);
-                if(result.WEIGHT == 1){
-                    $(".alert").html("Не меньше 10 тонн");
+                 if($("#weight").val() >= 10 || $("#weight").val() == '0'){
+                     $(".alert").html("");
+                    $('#weight').css({'border':'1px solid #58585A'});
+                   
+                    
                 }else{
-                    $(".alert").html("");
+                    $(".alert").html("Не меньше 10 тонн");
+                    $('#weight').css({'border':'1px solid #F7D11F'}); 
+                    
                 }
-                var bailerClassRemove = $(".bailer_wrapper").attr("class").split(" ")[2];
+                
+                /*bailerClassRemove = $(".bailer_wrapper").attr("class").split(" ")[2];
                 $(".bailer_wrapper").removeClass(bailerClassRemove);
-                $(".bailer_wrapper").addClass(result.BAILER_CLASS);
+                $(".bailer_wrapper").addClass(result.BAILER_CLASS);*/
                 
                 var textureClassRemove = $(".main_track_wrapper").attr("class").split(" ")[1];
                 $(".main_track_wrapper").removeClass(textureClassRemove);
                 $(".main_track_wrapper").addClass(result.TEXTURE_CLASS);
-                
             }
         );          
     }
+   
     
     function findMainElement(){
         $(".selected_item_wrapper").css("opacity", "1");
@@ -243,9 +249,11 @@ $(function domReady() {
         $(".point_list").on("click", "li", function(){
             if($(this).hasClass("other_city")){
                 $("#showForm").text("Узнать стоимость");
-                $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 1 мин.</div>");
-                $(".label_other_city").show();
+                $(".total_price_value").html("<div class='other_city_30'>Звоните прямо сейчас!<br><br>МЫ рассчитаем стоимость <br /> в течение 1 мин.<br><span>8 (863) 221-80-70</span></div>");
+                
+                //$(".label_other_city").show();
                 $(".price_value").hide();
+                $(".not_price_for_me").hide();
                 if($(this).children().val() === 'Другой...'){
                     $(this).children().val('');
                 }
@@ -294,6 +302,18 @@ $(function domReady() {
     $("#showForm").on("click", function(){
         $(this).hide();
         $(".main_form").slideDown(800);
+        $('.order_by_phone > h3').fadeOut(600);
+        $('.order_by_phone > p').fadeOut(600);
+        //$('.main_track_wrapper').css({'margin-top':'112px'});
+    });
+    var animationProcess = false;
+ $('.not_price_for_me').hover(function(){
+        if (animationProcess) return; else animationProcess = true;
+        $(this).width('180px').find('p').slideDown(600, function () { animationProcess = false; });
+    },function(){
+        if (animationProcess) return; else animationProcess = true;
+        $(this).find('p').slideUp(600);
+        $(this).animate({width:'130px'}, 600, function () { animationProcess = false; });
     });
     
     setTimeout(

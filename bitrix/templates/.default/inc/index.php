@@ -1,3 +1,4 @@
+<div class="material_selection">
 <div class="center_wrapper"></div>
 <div class="carousel">                
     <div class="slides"><?
@@ -44,34 +45,30 @@
     <div class="selected_item_title"></div>
     <div class="selected_item_promo"></div>
 </div>
+</div>
 <div class="controls">
-    <div class="controls_item cars">
+    <!--<div class="controls_item cars">
         <div class="rounded">
         
         </div>
         <div class="cars_counter">0</div>
         <div class="controls_title"><?=GetMessage("CARS_COUNT")?></div>
-    </div>
+    </div>-->
     <div class="controls_item weight">
+        <div class="controls_title"><?=GetMessage("WEIGHT")?></div>
         <div class="rounded">
             <div class="weight_wrapp">
                 <input class="cursor" type="text" value="0" name="weight" id="weight" />
                 <span>т</span>
             </div>
-            <div class="alert"></div>
+<div class="alert"></div>
         </div>
-        <div class="controls_title"><?=GetMessage("WEIGHT")?></div>
+        
     </div>
-    <div class="controls_item bailer_wrapper bailer_8_darkgray">
+    <!--<div class="controls_item bailer_wrapper bailer_8_darkgray">
         <div class="bailer"></div>
-    </div>
-</div>
-<div class="main_track_wrapper texture_8_darkgray">
-    <div class="main_track">
-
-    </div>
-</div>
-<div class="form_wrapper">
+    </div>-->
+    <div class="form_wrapper">
     <div class="form_inner">
         <div class="destination_point">
             <ul class="point_list"><?
@@ -111,6 +108,10 @@
             <div class="form_title">Стоимость</div>
             <div class="total_price_value">0 <span>руб.</span></div>
             <div class="price_value">0</div>
+            <div class="not_price_for_me">
+                <a href="javascript:void(0)">Не устравивает цена?</a>
+                <p>Звони по телефону 221-80-70</p>
+            </div>
         </div>
     </div>
     <div class="form_inner form_inner_wrapp">
@@ -122,8 +123,19 @@
             <span>Отправить</span>
             <input class="large_button" id="sendForm" type="submit" value="Отправить" />
         </div>
-        <a href="javascript:void(0)" id="showForm" class="large_button">Оформить заказ</a>
+<!--        <a href="javascript:void(0)" id="showForm" class="large_button">Оформить заказ</a>-->
         <div class="label_other_city"><?=GetMessage("LABEL_OTHER_CITY")?></div>
     </div>
 </div>
+</div>
+<div class="order_by_phone">
+    <h3>Оформите заказ по телефону</h3>
+    <p>8 (863) 221-80-70</p>
+    <div class="main_track_wrapper texture_8_darkgray">
+        <div class="main_track">
+
+        </div>
+    </div>
+</div>
+
      
