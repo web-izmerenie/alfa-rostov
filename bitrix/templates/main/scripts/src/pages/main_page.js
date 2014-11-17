@@ -266,7 +266,9 @@ $(function domReady() {
                 var value = $(this).attr("data-value");
                 $("#destination_point").val(value);
                 $(".current_point span").text(title);
-                $("body").find(".point_list").hide();
+                setTimeout(function(){
+                    $(".not_price_for_me").fadeIn(500);
+                }, 1500);
                 calc();
             }
         });
