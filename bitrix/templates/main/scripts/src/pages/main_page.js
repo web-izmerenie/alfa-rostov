@@ -256,7 +256,9 @@ $(function domReady() {
                 $(".not_price_for_me").hide();
                 if($(this).children().val() === 'Другой...'){
                     $(this).children().val('');
+                     //$('.point_list').hide();
                 }
+               
             }else{
                 $("#showForm").text("Оформить заказ");
                 $(".total_price_value").show();
@@ -266,6 +268,7 @@ $(function domReady() {
                 var value = $(this).attr("data-value");
                 $("#destination_point").val(value);
                 $(".current_point span").text(title);
+                $('.point_list').hide();
                 setTimeout(function(){
                     $(".not_price_for_me").fadeIn(500);
                 }, 1500);
