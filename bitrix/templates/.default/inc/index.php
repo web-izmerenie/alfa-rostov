@@ -5,7 +5,7 @@
         CModule::IncludeModule("iblock");
         $res = CIBlockElement::GetList(
             array(
-                "SORT" => "asc"
+                "NAME" => "asc"
             ),
             array(
 				"ACTIVE" => "Y",
