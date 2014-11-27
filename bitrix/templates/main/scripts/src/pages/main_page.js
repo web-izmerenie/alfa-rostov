@@ -51,6 +51,23 @@ $(function domReady() {
         );          
     }
    
+    function hoverTitle(){
+                var $slideItem = $("body").find(".slideItem");
+        $.each($slideItem, function(){
+            var newtitle = $(this).attr("data-item-title") + " " + $(this).attr("data-item-promo");
+            
+            if($(this).hasClass("slideItemCenter")) 
+                newtitle = "";
+                
+            $(this).tooltip({
+                "content" : newtitle,
+                "position" : {
+                    "my": "center top", 
+                    "at": "center bottom-8"
+                }
+            });
+        });
+    }
     
     function findMainElement(){
         $(".selected_item_wrapper").css("opacity", "1");
@@ -107,21 +124,7 @@ $(function domReady() {
             /* }, 100); */
         /* }, 100); */
         
-        var $slideItem = $("body").find(".slideItem");
-        $.each($slideItem, function(){
-            var newtitle = $(this).attr("data-item-title") + " " + $(this).attr("data-item-promo");
-            
-            if($(this).hasClass("slideItemCenter")) 
-                newtitle = "";
-                
-            $(this).tooltip({
-                "content" : newtitle,
-                "position" : {
-                    "my": "center top", 
-                    "at": "center bottom-8"
-                }
-            });
-        });
+        hoverTitle();
     }
     setTimeout(calc, 100);
     function startCarousel(){
@@ -145,12 +148,14 @@ $(function domReady() {
             before: function(){
                 $(".slideItemCenter").removeClass("slideItemCenter");
                 $(".selected_item_wrapper").css("opacity", "0");
-                $(".center_wrapper").css("opacity", "0");                
+                $(".center_wrapper").css("opacity", "0");
+                $('body>.ui-tooltip').remove();
             },
             after: function(){
                 findMainElement();
                 $(".weight_wrapp #weight").val("0");
                 $(".cars_counter").html("0");
+                $('body>.ui-tooltip').remove();
                 calc();
             }
         });    
