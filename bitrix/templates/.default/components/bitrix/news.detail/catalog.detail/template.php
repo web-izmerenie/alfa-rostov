@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<main>
+<main data-id="<?=$arResult['ID'];?>">
+
 <div class="section_standart detail_text_photo_block">
     <div class="grid_element"><?
         $href = $_GET["ITEM_ONE"] ? "/nerudnye-materialy.html" : $arResult["SECTION"]["PATH"][0]["SECTION_PAGE_URL"]?>
@@ -80,7 +81,7 @@
     if($arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]){?>
         <?=$arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]["TEXT"]?><?
     }?>
-    <span data-link="<?=SITE_DIR?>" class="large_button span_link"><?=GetMessage("CALC_BUTTON")?></span>
+    <span id="calc-summ" class="large_button span_link"><?=GetMessage("CALC_BUTTON")?></span>
 </div>
 <div class="double_zigzag_wrapper">
     <div><?=GetMessage("KRYIM")?></div>

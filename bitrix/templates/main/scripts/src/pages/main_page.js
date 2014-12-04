@@ -15,6 +15,15 @@ $(function domReady() {
     counter = $Items.size();
     maxZindex = counter - 1;
     
+    function showPrice(){
+        if($('#weight').val() != '0'){
+            setTimeout(function(){
+                $(".not_price_for_me").fadeIn(500);
+            }, 1500);
+         }
+    }
+
+    
     function calc(){
         $.post(
             "/ajax/handler.php",
@@ -29,6 +38,7 @@ $(function domReady() {
                 $(".total_price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
                 $(".total_price_value span").html(result.UNIT_BOTTOM);
+                showPrice();
                  if($("#weight").val() >= 10 || $("#weight").val() == '0'){
                      $(".alert").html("");
                     $('#weight').css({'border':'1px solid #58585A'});
@@ -150,6 +160,8 @@ $(function domReady() {
                 $(".selected_item_wrapper").css("opacity", "0");
                 $(".center_wrapper").css("opacity", "0");
                 $('body>.ui-tooltip').remove();
+                $('.not_price_for_me').hide();
+                
             },
             after: function(){
                 findMainElement();
@@ -157,6 +169,7 @@ $(function domReady() {
                 $(".cars_counter").html("0");
                 $('body>.ui-tooltip').remove();
                 calc();
+                showPrice();
             }
         });    
     }   
@@ -164,6 +177,16 @@ $(function domReady() {
     
     startCarousel();
     
+    window.onload=function(){
+        if (location.hash.charAt(0) === '#' && location.hash.length > 1) {
+            var id = location.hash.replace(/^#([0-9]+)$/, '$1');
+            if (id.toString() === parseInt(id, 10).toString()) {
+                $('.slideItem[data-item-id="'+id+'"]').trigger('click');
+            }
+        }
+    };
+            
+
     $(window).on("resize", null, null, startCarousel);    
     
     setTimeout(findMainElement, 2); 
@@ -193,7 +216,8 @@ $(function domReady() {
         $(this).addClass("cursor");
         
     });
-    
+
+
     
     function carChanger(){        
         var weight = $weight.val();
@@ -274,9 +298,6 @@ $(function domReady() {
                 $("#destination_point").val(value);
                 $(".current_point span").text(title);
                 $('.point_list').hide();
-                setTimeout(function(){
-                    $(".not_price_for_me").fadeIn(500);
-                }, 1500);
                 calc();
             }
         });
@@ -294,6 +315,7 @@ $(function domReady() {
                 $(this).val($(this).prev().text());
             }
         });
+        
     }
     function getInputValueEmpty($this){
         var val = $this.val();

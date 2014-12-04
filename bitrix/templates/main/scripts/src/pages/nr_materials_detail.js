@@ -166,7 +166,9 @@ $(function domReady() {
         });
     });
         
-    
+  $('#calc-summ').click(function(){
+    location.href = '/#'+$('main').attr('data-id');
+  });  
     
 }); // domReady
 }); // define
