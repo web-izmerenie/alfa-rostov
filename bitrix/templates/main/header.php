@@ -76,7 +76,7 @@
             if($APPLICATION->GetCurPage() == SITE_DIR){?>
                 <span class="logo"></span><?
             }else{?>
-                <a href="<?=SITE_DIR?>" class="logo"></a><?
+                <a onclick="yaCounter10759630.reachGoal('LOGO'); return true;" href="<?=SITE_DIR?>" class="logo"></a><?
             }?>            
             <nav class="top_menu"><?$APPLICATION->IncludeComponent("bitrix:menu", "top.menu", array(
 	"ROOT_MENU_TYPE" => "top",
