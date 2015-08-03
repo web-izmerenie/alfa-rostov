@@ -1,6 +1,7 @@
 <?
 define("SHOW_TITLE", "Y");
 define("NR_MATERIALS", "Y");
+define("CALC_TITLE", "Y");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 CModule::IncludeModule("iblock");

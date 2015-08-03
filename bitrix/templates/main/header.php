@@ -124,6 +124,16 @@
                     } */?>
                     <h1><?$APPLICATION->ShowProperty("pagetitle")?></h1><?
                 }?>
+                <?if(defined('CALC_TITLE')){?>
+                    <div class="calculation">
+                        <ul>
+                            <li>Быстрый расчет стоимости - 5-10 минут.</li>
+                            <li>Доставка заказа от 1 часа после вашего звонка.</li>
+                            <li>Единовременная отгрузка от 10 до 50 тонн.</li>
+
+                        </ul>   
+                    </div>
+                <?}?>
             </div><?
             }
             if(defined("TWO_COLS")){?>

@@ -3,9 +3,18 @@
  *
  * @author Dmitry Komkov
  */
+
+@import "nr_materials_detail.less";
  
 html.nr_materials{
     body{
+        .calculation{
+            margin: 0 auto !important;
+            left: 0 !important;
+            text-align: left;
+            .calculation();
+        }//calculation
+        
         .grid_wrapper{
             min-width:980px;
             max-width:1600px;

@@ -3,6 +3,56 @@
  *
  * @author Dmitry Komkov
  */
+
+.calculation(){
+        display:inline-block;
+        position:relative;
+        left:50%; 
+        margin-bottom:43px;
+
+        .label{
+            font-size:18px;
+            color:#fff;
+            text-transform:uppercase;
+            margin-bottom:20px;
+
+        }
+
+        ul{
+            font-size:18px;
+            color:#fff;
+
+            li{
+                margin-bottom:26px;
+                position:relative;
+                padding-left:48px;
+                padding-top:6px;
+                line-height:22px;
+
+                &:before{
+                    content:'';
+                    display:inline-block;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:34px;
+                    height:33px;
+                    background:url("@{imagesPrefix}sprite.png") -223px 0 no-repeat;
+                }
+
+                &.calculation_point_2{
+                    &:before{
+                        background-position: -223px -33px;
+                    }
+                }
+                &.calculation_point_3{
+                    &:before{
+                        background-position: -223px -66px;
+                    }
+                }
+            }
+        }
+}
  
 html.nr_materials_detail{
     body{
@@ -260,54 +310,8 @@ html.nr_materials_detail{
                     }
                 } // .dark_side
                 .calculation{
-                    display:inline-block;
-                    position:relative;
-                    left:50%; 
-                    margin-bottom:43px;
-                    
-                    .label{
-                        font-size:18px;
-                        color:#fff;
-                        text-transform:uppercase;
-                        margin-bottom:20px;
-                        
-                    }
-                    
-                    ul{
-                        font-size:18px;
-                        color:#fff;
-                        
-                        li{
-                            margin-bottom:26px;
-                            position:relative;
-                            padding-left:48px;
-                            padding-top:6px;
-                            line-height:22px;
-                            
-                            &:before{
-                                content:'';
-                                display:inline-block;
-                                position:absolute;
-                                top:0;
-                                left:0;
-                                width:34px;
-                                height:33px;
-                                background:url("@{imagesPrefix}sprite.png") -223px 0 no-repeat;
-                            }
-                            
-                            &.calculation_point_2{
-                                &:before{
-                                    background-position: -223px -33px;
-                                }
-                            }
-                            &.calculation_point_3{
-                                &:before{
-                                    background-position: -223px -66px;
-                                }
-                            }
-                        }
-                    }
-                } // .calculation
+                    .calculation();
+                }//calculation
                 .double_zigzag_wrapper{
                     &:before{
                         display:none;
