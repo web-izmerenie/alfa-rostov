@@ -62,8 +62,15 @@ $(function domReady() {
         $.each($elements, function(){
             $title = $(this).find(".grid_element_title");
             $image = $(this).find(".grid_element_img img");
+			$price = $(this).find(".price");
+			
             $title.css({
                 "marginLeft" : (parseFloat($image.width()) / 2) - (parseFloat($title.width()) / 2)
+            });
+			
+			$price.css({
+                "marginLeft" : (parseFloat($image.width()) / 2) - (parseFloat($title.width()) / 2),
+				"width": $title.width()
             });
         });  
         

@@ -81,7 +81,9 @@
     if($arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]){?>
         <?=$arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]["TEXT"]?><?
     }?>
-    <span id="calc-summ" class="large_button span_link"><?=GetMessage("CALC_BUTTON")?></span>
+    <span id="calc-summ" class="large_button span_link" onclick="yaCounter10759630.reachGoal('CALC_SUMM'); return true;">
+        <?=GetMessage("CALC_BUTTON")?>
+    </span>
 </div>
 <div class="double_zigzag_wrapper">
     <div><?=GetMessage("KRYIM")?></div>

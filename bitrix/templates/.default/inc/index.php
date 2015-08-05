@@ -32,7 +32,7 @@
                 $bottomName = "";
             }
             ?>
-            <div title="" data-item-id="<?=$fields["ID"]?>" data-item-title="<?=$topName?>" data-item-promo="<?=$bottomName?>" class="slideItem">
+            <div onclick="yaCounter10759630.reachGoal('SLIDE'); return true;" title="" data-item-id="<?=$fields["ID"]?>" data-item-title="<?=$topName?>" data-item-promo="<?=$bottomName?>" class="slideItem">
                 <div class="hover"></div>
                 <img src="<?=$pic?>" />
             </div><?
@@ -58,7 +58,7 @@
         <div class="controls_title"><?=GetMessage("WEIGHT")?></div>
         <div class="rounded">
             <div class="weight_wrapp">
-                <input class="cursor" type="text" value="0" name="weight" id="weight" />
+                <input onclick="yaCounter10759630.reachGoal('WEIGHT'); return true;" class="cursor" type="text" value="0" name="weight" id="weight" />
                 <span>т</span>
             </div>
 <div class="alert"></div>
@@ -70,7 +70,7 @@
     </div>-->
     <div class="form_wrapper">
     <div class="form_inner">
-        <div class="destination_point">
+        <div onclick="yaCounter10759630.reachGoal('POINT'); return true;" class="destination_point">
             <ul class="point_list"><?
                 $dest = CIBlockElement::GetList(
                     array(
@@ -96,7 +96,7 @@
                     <li data-value="<?=$arDest["ID"]?>"><?=$arDest["NAME"]?></li><?
                 }
             ?>
-                <li  class="other_city" data-value="0"><input type="text" value="<?=GetMessage("ANOTHER")?>" /></li>
+                <li class="other_city" data-value="0"><input type="text" value="<?=GetMessage("ANOTHER")?>" /></li>
             </ul>
             <?/* <input type="hidden" name="destination_point" id="destination_point" value="<?=$arDestCur["VALUE"]?>" /> */?>
             <input type="hidden" name="destination_point" id="destination_point" value="0" />

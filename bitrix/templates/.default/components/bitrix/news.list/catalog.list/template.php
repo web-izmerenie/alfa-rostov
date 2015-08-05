@@ -30,6 +30,9 @@ if($section->SelectedRowsCount()){
                         <span></span>
                     </span>
                     <span class="grid_element_title"><?=$ItemName?></span>
+                    <?if(!empty($Item['PROPERTIES']['ATT_PRICE']['VALUE'])){?>
+                        <span class="price">от <?=$Item['PROPERTIES']['ATT_PRICE']['VALUE'];?> руб.</span>
+                    <?}?>
                 </a>
             </div><?
         }?>

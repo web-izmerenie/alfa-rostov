@@ -76,7 +76,7 @@
             if($APPLICATION->GetCurPage() == SITE_DIR){?>
                 <span class="logo"></span><?
             }else{?>
-                <a href="<?=SITE_DIR?>" class="logo"></a><?
+                <a onclick="yaCounter10759630.reachGoal('LOGO'); return true;" href="<?=SITE_DIR?>" class="logo"></a><?
             }?>            
             <nav class="top_menu"><?$APPLICATION->IncludeComponent("bitrix:menu", "top.menu", array(
 	"ROOT_MENU_TYPE" => "top",
@@ -124,6 +124,16 @@
                     } */?>
                     <h1><?$APPLICATION->ShowProperty("pagetitle")?></h1><?
                 }?>
+                <?if(defined('CALC_TITLE')){?>
+                    <div class="calculation">
+                        <ul>
+                            <li>Быстрый расчет стоимости - 5-10 минут.</li>
+                            <li>Доставка заказа от 1 часа после вашего звонка.</li>
+                            <li>Единовременная отгрузка от 10 до 50 тонн.</li>
+
+                        </ul>   
+                    </div>
+                <?}?>
             </div><?
             }
             if(defined("TWO_COLS")){?>
