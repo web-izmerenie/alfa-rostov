@@ -20,6 +20,9 @@ if($section->SelectedRowsCount()){
     ?>
     <div class="grid_wrapper">
         <a title="<?=GetMessage("TITLE_BACK")?>" href="<?=SITE_DIR?>nerudnye-materialy.html" class="backlink"></a><?
+        if($arResult["ITEMS"][0]["IBLOCK_SECTION_ID"] == 8){
+          print "<!--noindex-->";
+        }
         foreach($arResult["ITEMS"] as $Item){
             $ItemName = preg_replace("/(\d+)-(\d+)/", "<span class='nowrap'>\$1-\$2</span>", $Item["NAME"]);
             $ItemName = preg_replace("/сорт (\d+)/", "<span class='nowrap'>сорт \$1</span>", $ItemName);?>
@@ -35,8 +38,11 @@ if($section->SelectedRowsCount()){
                     <?}?>
                 </a>
             </div><?
+        }
+        if($arResult["ITEMS"][0]["IBLOCK_SECTION_ID"] == 8){
+          print "<!--/noindex-->";
         }?>
-        
+
     </div>
     <div class="double_zigzag_wrapper">
         <div><?=GetMessage("KRYIM")?></div>
@@ -46,7 +52,7 @@ if($section->SelectedRowsCount()){
     </div>
     <?$APPLICATION->SetPageProperty("pagetitle", $arSection["NAME"]);?>
     <?$APPLICATION->SetPageProperty("headertitle", $arSection["UF_META_TITLE"]);?><?
-}else{    
+}else{
     CHTTP::SetStatus("404 Not Found");
     require($_SERVER["DOCUMENT_ROOT"]."/404.php");
 }?>

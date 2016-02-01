@@ -10,6 +10,12 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
   Options +FollowSymLinks
   RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^www\.alfa-rostov\.ru$
+RewriteCond %{HTTP_HOST} !^dev\.alfa-rostov\.ru$
+RewriteRule ^(.*)$ http://www.alfa-rostov.ru/$1 [R=301,L]
+
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteCond %{REQUEST_FILENAME} !-d
