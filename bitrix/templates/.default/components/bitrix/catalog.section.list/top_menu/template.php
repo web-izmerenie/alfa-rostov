@@ -22,4 +22,8 @@ $this->setFrameMode(true);?>
 			</a>
 		</li>
 	<?endforeach; ?>
+	<li><a href="/kontaktnaya-informatsiya/"
+		<?if($APPLICATION->GetCurPage() == "/kontaktnaya-informatsiya/"):?>
+		class="active"
+	<?endif;?>>Контакты</a></li>
 </ul>

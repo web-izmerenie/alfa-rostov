@@ -121,6 +121,43 @@
     &:hover:before { visibility: visible; }
 }
 
+.topMenu(){
+  li{
+      display:inline-block;
+      text-transform: uppercase;
+      margin:0 0 0 26px;
+
+      &:last-child{
+        a,span,span.span_link{
+          color: #f7d11f;
+        }
+      }
+
+      a,span,span.span_link{
+          text-decoration: none;
+          color: @fontColorDefault;
+          font-size: 16px;
+          transition: color @transitionDuration linear;
+          .transition(color @transitionDuration linear);
+      &.span_link{
+          cursor:pointer;
+      }
+
+          &:hover,&.active{
+              color: #ffffff;
+          }
+
+          @media(max-width: 980px){
+            font-size: 14px
+          }
+      }
+      span{
+          color:#ffffff;
+      }
+
+  }
+}
+
 /* IE8 FIXES }}}1 */
 
 // vim: set sw=4 ts=4 et foldmethod=marker ff=unix fenc=utf-8 :
