@@ -1,4 +1,4 @@
-Options -Indexes 
+Options -Indexes
 ErrorDocument 404 /404.php
 
 <IfModule mod_php5.c>
@@ -12,7 +12,7 @@ ErrorDocument 404 /404.php
   RewriteEngine On
 
 RewriteCond %{HTTP_HOST} !^www\.alfa-rostov\.ru$
-RewriteCond %{HTTP_HOST} !^dev\.alfa-rostov\.ru$
+RewriteCond %{HTTP_HOST} !^andrei\.alfa-rostov\.ru$
 RewriteRule ^(.*)$ http://www.alfa-rostov.ru/$1 [R=301,L]
 
 
@@ -34,7 +34,7 @@ RewriteRule ^(.*)$ http://www.alfa-rostov.ru/$1 [R=301,L]
   ExpiresByType image/gif "access plus 3 day"
   ExpiresByType image/png "access plus 3 day"
   ExpiresByType text/css "access plus 3 day"
-  ExpiresByType application/javascript "access plus 3 day"  
+  ExpiresByType application/javascript "access plus 3 day"
 </IfModule>
 
 Redirect 301 /o-kompanii.html /o-kompanii/

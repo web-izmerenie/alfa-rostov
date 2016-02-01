@@ -1,9 +1,9 @@
 <?
     IncludeTemplateLangFile(__FILE__);
-    
+
     $html_classes = array();
     $revision = 6;
-    
+
     if($USER->IsAdmin()){
         $revision = time();
     }
@@ -31,10 +31,10 @@
         $html_classes[] = "contacts";
     if(defined("ERROR_404"))
         $html_classes[] = "error_404";
-        
+
     $html_classes = implode(" ", $html_classes);
-    
-    
+
+
 ?><!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>" class="<?=$html_classes?>">
 <head>
@@ -51,9 +51,9 @@
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCHuPjTMfHDcczFnfcHNOMPEsI7wqY5A8k&sensor=false"></script>
     <?endif;?>
     <?$APPLICATION->ShowCSS();?>
-    <script src="/bitrix/templates/main/scripts/build/build.js?v=<?=$revision?>"></script>  
-    <?$APPLICATION->ShowHeadStrings();?>        
-    
+    <script src="/bitrix/templates/main/scripts/build/build.js?v=<?=$revision?>"></script>
+    <?$APPLICATION->ShowHeadStrings();?>
+
     <script>
         //<![CDATA[
             require(['basics/get_val'], function (getVal) {
@@ -66,7 +66,7 @@
             });
         //]]>
     </script>
-    
+
 </head>
 
 <body><?$APPLICATION->ShowPanel();?>
@@ -77,44 +77,51 @@
                 <span class="logo"></span><?
             }else{?>
                 <a onclick="yaCounter10759630.reachGoal('LOGO'); return true;" href="<?=SITE_DIR?>" class="logo"></a><?
-            }?>            
-            <nav class="top_menu"><?$APPLICATION->IncludeComponent("bitrix:menu", "top.menu", array(
-	"ROOT_MENU_TYPE" => "top",
-	"MENU_CACHE_TYPE" => "A",
-	"MENU_CACHE_TIME" => "3600",
-	"MENU_CACHE_USE_GROUPS" => "Y",
-	"MENU_CACHE_GET_VARS" => array(
-	),
-	"MAX_LEVEL" => "1",
-	"CHILD_MENU_TYPE" => "left",
-	"USE_EXT" => "Y",
-	"DELAY" => "N",
-	"ALLOW_MULTI_SELECT" => "N"
-	),
-	false
-);?>
+            }?>
+            <nav class="top_menu">
+              <?$APPLICATION->IncludeComponent(
+              	"bitrix:catalog.section.list",
+              	"top_menu",
+              	Array(
+              		"IBLOCK_TYPE" => "lists",
+              		"IBLOCK_ID" => "1",
+              		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+              		"SECTION_CODE" => "",
+              		"COUNT_ELEMENTS" => "Y",
+              		"TOP_DEPTH" => "2",
+              		"SECTION_FIELDS" => array("", ""),
+              		"SECTION_USER_FIELDS" => array("", ""),
+              		"VIEW_MODE" => "LIST",
+              		"SHOW_PARENT_NAME" => "Y",
+              		"SECTION_URL" => "",
+              		"CACHE_TYPE" => "A",
+              		"CACHE_TIME" => "36000000",
+              		"CACHE_GROUPS" => "Y",
+              		"ADD_SECTIONS_CHAIN" => "Y"
+              	)
+              );?>
             </nav>
         </header>
-        <div class="wrapper"><?  
-            
+        <div class="wrapper"><?
+
             if(defined("SHOW_TITLE")){?>
             <div class="page_header"><?
                 if($user_title){?>
             	<h1><?=$user_title?></h1><?
                 }else{
-                    
+
                     /* if($pagetitle){?>
-                        <h1><?=$pagetitle?></h1><?                    
+                        <h1><?=$pagetitle?></h1><?
                     }else{
                         $filepath = stripos($_SERVER["PHP_SELF"], "urlrewrite") ? $_SERVER['REAL_FILE_PATH'] : $_SERVER["PHP_SELF"];
-                        
+
                         $arFilepath = explode("/", $filepath);
                         $lastIndex = count($arFilepath) - 1;
                         if(stripos($arFilepath[$lastIndex], "php")){
                             unset($arFilepath[$lastIndex]);
                         }
                         $filepath = implode("/", $arFilepath) . "/";
-                        
+
                         $isInclude = include($_SERVER["DOCUMENT_ROOT"].$filepath.".section.php");
                         if($isInclude){?>
                             <h1><?=$sSectionName?></h1><?
@@ -131,7 +138,7 @@
                             <li>Доставка заказа от 1 часа после вашего звонка.</li>
                             <li>Единовременная отгрузка от 10 до 50 тонн.</li>
 
-                        </ul>   
+                        </ul>
                     </div>
                 <?}?>
             </div><?
@@ -156,5 +163,4 @@
 );?>
                     </nav>
                     <main><?
-            }?>           
-        
+            }?>
