@@ -8,11 +8,11 @@
                 </div><?
             }
             if(defined("SHOW_KRYIM_BLOCK")){?>
-            <!--noindex-->
-            <div class="double_zigzag_wrapper">
-                <div><?=GetMessage("KRYIM")?></div>
-            </div>
-            <!--/noindex--><?
+              <!--noindex-->
+                <div class="double_zigzag_wrapper">
+                    <div><?=GetMessage("KRYIM")?></div>
+                </div>
+              <!--/noindex--><?
             }?>
         </div> <!-- .wrapper -->
 

@@ -1,5 +1,5 @@
 <?
-$MESS["KRYIM"] =  "Осуществляем поставки <br />песка и щебня в республику Крым";
+$MESS["KRYIM"] =  "Осуществляем поставки <br />песка и щебня в республику Крым1";
 $MESS["DEVELOPER"] =  "Сделано в <a href='http://web-izmerenie.ru/' target='_blank'></a>";
 $MESS["FEATURES"] =  "Характеристики";
 $MESS["NORM:"] =  "Норма:";

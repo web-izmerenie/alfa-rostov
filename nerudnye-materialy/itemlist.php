@@ -10,8 +10,8 @@ CModule::IncludeModule("iblock");
         "SECTION_CODE" => $_REQUEST["CODE"]
     );
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"catalog.list", 
+	"bitrix:news.list",
+	"catalog.list",
 	array(
 		"IBLOCK_TYPE" => "lists",
 		"IBLOCK_ID" => "1",

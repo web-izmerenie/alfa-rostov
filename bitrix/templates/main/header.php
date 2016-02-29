@@ -39,6 +39,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?=LANGUAGE_ID?>" lang="<?=LANGUAGE_ID?>" class="<?=$html_classes?>">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="320px" />
     <?$APPLICATION->ShowMeta("keywords")?>
     <?$APPLICATION->ShowMeta("description")?>
     <title><?$APPLICATION->ShowProperty("headertitle")?></title>
@@ -129,6 +130,7 @@
                             <h1><?=$APPLICATION->ShowTitle()?></h1><?
                         }
                     } */?>
+                    <!--noindex-->
                     <h1><?$APPLICATION->ShowProperty("pagetitle")?></h1><?
                 }?>
                 <?if(defined('CALC_TITLE')){?>
@@ -141,6 +143,7 @@
                         </ul>
                     </div>
                 <?}?>
+                <!--/noindex-->
             </div><?
             }
             if(defined("TWO_COLS")){?>

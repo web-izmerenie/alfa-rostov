@@ -1,8 +1,8 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?
-if(count($arResult["ITEMS"]) == 1){
-    LocalRedirect($arResult["ITEMS"][0]["DETAIL_PAGE_URL"]."?ITEM_ONE=Y");
-}
+// if(count($arResult["ITEMS"]) == 1){
+//     LocalRedirect($arResult["ITEMS"][0]["DETAIL_PAGE_URL"]."?ITEM_ONE=Y");
+// }
 $section = CIBlockSection::GetList(
     array(),
     array(
