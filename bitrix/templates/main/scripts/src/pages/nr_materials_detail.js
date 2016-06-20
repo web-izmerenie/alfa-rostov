@@ -165,6 +165,20 @@ $(function domReady() {
             }
         });
     });
+
+    // Блок с отзывами
+    $('.faq-block .read-more').click(function(){
+        $('.faq-block .faq-block_wrapper').fadeIn('fast');
+        $(this).remove();
+        return false;
+    });
+
+    // Блок со статьей о материале
+    $('.detail-block .read-more').click(function(){
+        $('.detail-block .over-block').animate({'max-height': '100%'}, 1000);
+        $(this).remove();
+        return false;
+    });
         
     
     

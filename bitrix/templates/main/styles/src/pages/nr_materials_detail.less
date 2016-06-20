@@ -105,6 +105,55 @@ html.nr_materials_detail{
                         font-size:18px;
                         line-height:24px;
                     }//.grid_text
+                    .grid_prices {
+                        margin-top: 40px;
+
+                        .grid_prices-title {
+                            font-size: 22px;
+                            text-transform: uppercase;
+                            font-family: 'RobotoCondensedBold';
+
+                            span {
+                                color: #f7d11f;
+                            }
+                        }
+                        .grid_price-city {
+                            font-size: 20px;
+                            margin-top: 20px;
+                            font-family: 'RobotoCondensedRegular';
+                        }
+                        .grid_price-other_city {
+                            font-size: 18px;
+                            margin-top: 30px;
+                            p {
+                                font-family: 'RobotoCondensedLight',Arial,sans-serif;
+                            }
+                        }
+                    }
+                    .grid_params {
+                        margin-top: 20px;
+
+                        .grid_params-color {
+                            padding: 10px;
+                            position: relative;
+                            padding-left: 45px;
+
+                            &:before {
+                                content: '';
+                                display: inline-block;
+                                position: absolute;
+                                top: 5px;
+                                left: 0;
+                                width: 34px;
+                                height: 33px;
+                                background: url(../../images/sprite.png) -223px 0 no-repeat;
+                            }
+
+                            &.point2:before {
+                                background-position: -223px -33px;
+                            }
+                        }
+                    }
                     .resizer{
                         border-bottom:none;
                         position:absolute;
@@ -149,6 +198,146 @@ html.nr_materials_detail{
                     } //.resizer
                     
                 } // .detail_text_photo_block
+                .phone-yellow {
+                    margin: 10px 0;
+                    text-align: justify;
+                    padding: 5px 15px 5px 37px;
+                    display: inline-block;
+                    border-radius: 20px;
+                    color: #000;
+                    font-family: 'RobotoRegular';
+                    clear: left;
+                    background: #f7d11f url(../../images/phone-icon.png) no-repeat 12px;
+                }
+                .read-more {
+                    display: inline-block;
+                    padding: 7px 40px 7px 18px;
+                    color: #767676;
+                    background: #343431;
+                    font-size: 18px;
+                    border-radius: 20px;
+                    margin: 0 0 30px;
+                    background: #343431 url(../../images/show-more.png) no-repeat 90%;
+                }
+                .price_table_grid {
+                    min-width: 892px;
+                    max-width: 1138px;
+                    margin: 0 auto;
+                    padding-top: 40px;
+                    color: #fff;
+
+                    .price_table_grid-title {
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-family: 'RobotoCondensedBold';
+                        font-size: 28px;
+                        margin-bottom: 30px;
+                    }
+                    table {
+                        width: 100%;
+                        font-size: 20px;
+                        text-align: left;
+
+                        thead tr {
+                            height: 40px;
+                            background: #343431;
+
+                            th {
+                                color: #cfb024;
+                            }
+                        }
+                        tbody td {
+                            height: 35px;
+                            border-bottom: 1px solid #61615f;
+                        }
+                        td, th {
+                            vertical-align: middle;
+                        }
+                        td.name {
+                            padding-left: 30px;
+                            width: 40%;
+                        }
+                    }
+                    .phone-block {
+                        text-align: right;
+                        margin: 26px 0 0;
+                        font-size: 18px;
+
+                        span {
+                            margin-right: 12px;
+                        }
+                    }
+                }
+                .detail-block {
+                    margin-top: 60px;
+
+                    .detail-block_text {
+                        margin: 25px 0;
+                        font-size: 18px;
+                        overflow: hidden;
+                        max-height: 300px;
+                    }
+                }
+                .double_zigzag_wrap {
+                    &:before, &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        height: 8px;
+                        background: url("../../images/footer-spacer.png") 0 0 repeat-x;
+                    }
+                    .faq-block {
+                        min-width: 892px;
+                        max-width: 1138px;
+                        margin: 0 auto;
+                        padding-top: 40px;
+                        color: #fff;
+
+                        .faq-block_title {
+                            font-family: 'RobotoCondensedBold',Arial,sans-serif;
+                            text-transform: uppercase;
+                            font-size: 28px;
+                        }
+                        .faq-block_item {
+                            font-size: 18px;
+                            margin: 30px 0;
+
+                            .faq-question {
+                                font-family: 'RobotoCondensedBold',Arial,sans-serif;
+                                color: #f7d11f;
+                            }
+                            .faq-answer {
+                                margin-left: 30px;
+                            }
+                        }
+                        .faq-block_wrapper {
+                            display: none;
+                        }
+                    }
+                }
+                .order-block {
+                    margin-top: 58px;
+                    text-align: center;
+
+                    span {
+                        display: block;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-family: 'RobotoCondensedBold';
+                        font-size: 36px;
+                    }
+                    .phone {
+                        display: inline-block;
+                        font-family: 'RobotoRegular';
+                        font-size: 30px;
+                        padding: 10px 30px 10px 70px;
+                        color: #000;
+                        background: #f7d11f url(../../images/phone-icon-big.png) no-repeat 25px;
+                        border-radius: 40px;
+                        margin-top: 10px;
+                    }
+                }
                 .feature_list{
                     text-align:center;                    
                     h2{

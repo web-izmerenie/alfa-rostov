@@ -14,6 +14,28 @@
     </div>
     <div class="grid_text">
         <?=$arResult["DETAIL_TEXT"]?>
+        <div class="grid_prices">
+            <?if($arResult['PROPERTIES']['DELIVERY_CITY_PRICE']['VALUE']){?>
+            <div class="grid_prices-title"><?=GetMessage('GRID_PRICE_MESSAGE')?></div>
+                <?foreach($arResult['PROPERTIES']['DELIVERY_CITY_PRICE']['VALUE'] as $value){?>
+                    <div class="grid_price-city"><?=$value?></div>
+                <?}?>
+            <?}?>
+            <?if($arResult['PROPERTIES']['PHONE']['VALUE']){?>
+            <div class="grid_price-other_city">
+                <p><?=$arResult['PROPERTIES']['PHONE_TITLE']['VALUE']?></p>
+                <div class="phone-yellow"><?=$arResult['PROPERTIES']['PHONE']['VALUE']?></div>
+            </div>
+            <?}?>
+        </div>
+        <div class="grid_params">
+            <?if($arResult['PROPERTIES']['FAST_DELIVERY']['VALUE']){?>
+            <div class="grid_params-color point1">Доставка на следующий день</div>
+            <?}?>
+            <?if($arResult['PROPERTIES']['FAST_CALC']['VALUE']){?>
+            <div class="grid_params-color point2">Рассчет стоимости заказа от 5 до 10 минут</div>
+            <?}?>
+        </div>
     </div>
 </div><?
     $feature = CIBlockElement::GetList(
@@ -69,6 +91,24 @@
     }
 ?>
 </main>
+<?if($arResult['FAQ_ITEMS']) {?>
+<div class="double_zigzag_wrap">
+    <div class="faq-block">
+        <div class="faq-block_title">Вопрос-ответ</div>
+        <?foreach($arResult['FAQ_ITEMS'] as $k=>$faq){
+            if($k and $k%3==0) echo '<div class="faq-block_wrapper">';?>
+            <div class="faq-block_item">
+                <p class="faq-question"><?=$faq['NAME']?></p>
+                <p class="faq-answer"><?=$faq['PREVIEW_TEXT']?></p>
+            </div>
+        <?}?>
+        <?if(count($arResult['FAQ_ITEMS'])>3) {?>
+            </div>
+            <a href="#" class="read-more">Читать далее</a>
+        <?}?>
+    </div>
+</div>
+<?}?>
 <div class="dark_side">
     <img src="/bitrix/templates/main/images/track-detail.png" />
     <h2><?=GetMessage("NEXT_DAY_DELIVERY_LABEL")?></h2>
@@ -80,7 +120,15 @@
     if($arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]){?>
         <?=$arResult["DISPLAY_PROPERTIES"]["SEO_DESC"]["~VALUE"]["TEXT"]?><?
     }?>
-    <span data-link="<?=SITE_DIR?>" class="large_button span_link"><?=GetMessage("CALC_BUTTON")?></span>
+    <?if($arResult['PROPERTIES']['ORDER_PHONE']['VALUE']){?>
+    <div class="order-block">
+        <?if($arResult['PROPERTIES']['ORDER_TITLE']['VALUE']){?>
+        <span><?=$arResult['PROPERTIES']['ORDER_TITLE']['VALUE']?></span>
+        <?}?>
+        <div class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></div>
+    </div>
+    <?}?>
+<!--    <span data-link="--><?//=SITE_DIR?><!--" class="large_button span_link">--><?//=GetMessage("CALC_BUTTON")?><!--</span>-->
 </div>
 <div class="double_zigzag_wrapper">
     <div><?=GetMessage("KRYIM")?></div>
