@@ -175,8 +175,16 @@ $(function domReady() {
 
     // Блок со статьей о материале
     $('.detail-block .read-more').click(function(){
-        $('.detail-block .over-block').animate({'max-height': '100%'}, 1000);
-        $(this).remove();
+        if($(this).hasClass('open')) {
+            $('.detail-block .over-block').animate({'height': '300px'}, 1000);
+            $('.detail-block .read-more').css('background', '#343431 url(/bitrix/templates/main/images/show-more.png) no-repeat 90%').html('Читать далее');
+            $(this).removeClass('open');
+        }
+        else {
+            $('.detail-block .over-block').animate({'height': $('.detail-block .over-block')[0].scrollHeight}, 1000);
+            $(this).css('background', '#343431 url(/bitrix/templates/main/images/show-more-up.png) no-repeat 90%').html('Свернуть');
+            $(this).addClass('open');
+        }
         return false;
     });
         

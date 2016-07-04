@@ -24,7 +24,7 @@
             <?if($arResult['PROPERTIES']['PHONE']['VALUE']){?>
             <div class="grid_price-other_city">
                 <p><?=$arResult['PROPERTIES']['PHONE_TITLE']['VALUE']?></p>
-                <div class="phone-yellow"><?=$arResult['PROPERTIES']['PHONE']['VALUE']?></div>
+                <a href="tel:<?=$arResult['PROPERTIES']['PHONE']['VALUE']?>" class="phone-yellow"><?=$arResult['PROPERTIES']['PHONE']['VALUE']?></a>
             </div>
             <?}?>
         </div>
@@ -125,7 +125,7 @@
         <?if($arResult['PROPERTIES']['ORDER_TITLE']['VALUE']){?>
         <span><?=$arResult['PROPERTIES']['ORDER_TITLE']['VALUE']?></span>
         <?}?>
-        <div class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></div>
+        <a href="tel:<?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?>" class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></a>
     </div>
     <?}?>
 <!--    <span data-link="--><?//=SITE_DIR?><!--" class="large_button span_link">--><?//=GetMessage("CALC_BUTTON")?><!--</span>-->

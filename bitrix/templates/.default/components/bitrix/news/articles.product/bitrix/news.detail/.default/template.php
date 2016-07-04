@@ -2,16 +2,16 @@
     <main>
         <div class="section_standart detail_text_photo_block">
             <div class="grid_element">
-                <a href="<?=$arResult['MATERIAL']["DETAIL_PICTURE"]["SRC"]?>" data-action="getLarge" class="resizer"></a>
+                <a href="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" data-action="getLarge" class="resizer"></a>
         <span class="grid_element_img">
-            <a href="<?=$arResult['MATERIAL']["DETAIL_PICTURE"]["SRC"]?>" data-action="getLarge">
-                <img src="<?=$arResult['MATERIAL']["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arResult['MATERIAL']["NAME"]?>" />
+            <a href="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" data-action="getLarge">
+                <img src="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arResult["NAME"]?>" />
                 <span></span>
             </a>
         </span>
             </div>
             <div class="grid_text">
-                <?=$arResult['MATERIAL']["DETAIL_TEXT"]?>
+                <?=$arResult["PREVIEW_TEXT"]?>
                 <div class="grid_params">
                     <?if($arResult['PROPERTIES']['FAST_DELIVERY']['VALUE']){?>
                     <div class="grid_params-color point1">Доставка на следующий день</div>
@@ -48,7 +48,8 @@
             </table>
             <?if($arResult['PROPERTIES']['PHONE']['VALUE']){?>
             <div class="phone-block">
-                <span><?=$arResult['PROPERTIES']['PHONE_TITLE']['VALUE']?></span><div class="phone-yellow"><?=$arResult['PROPERTIES']['PHONE']['VALUE']?></div>
+                <span><?=$arResult['PROPERTIES']['PHONE_TITLE']['VALUE']?></span>
+                <a href="tel:<?=$arResult['PROPERTIES']['PHONE']['VALUE']?>" class="phone-yellow"><?=$arResult['PROPERTIES']['PHONE']['VALUE']?></a>
             </div>
             <?}?>
         </div>
@@ -92,7 +93,7 @@
         <?if($arResult['PROPERTIES']['ORDER_PHONE']['VALUE']){?>
         <div class="order-block">
             <span><?=$arResult['PROPERTIES']['ORDER_TITLE']['VALUE']?></span>
-            <div class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></div>
+            <a href="tel:<?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?>" class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></a>
         </div>
         <?}?>
         <!--    <span data-link="--><?//=SITE_DIR?><!--" class="large_button span_link">--><?//=GetMessage("CALC_BUTTON")?><!--</span>-->
