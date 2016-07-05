@@ -10,11 +10,17 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
   Options +FollowSymLinks
   RewriteEngine On
-
-RewriteCond %{HTTP_HOST} !^www\.alfa-rostov\.ru$
-RewriteCond %{HTTP_HOST} !^andrei\.alfa-rostov\.ru$
-RewriteRule ^(.*)$ http://www.alfa-rostov.ru/$1 [R=301,L]
-
+  
+  Redirect 301 /scheben.html /scheben/
+  RewriteRule ^nerudnye-materialy/scheben/(.*)$ /scheben/$1 [L,NC,R=301,NE]
+  
+  
+  RewriteRule ^scheben/v-(.*)\.html$	/seo/proxy.php?url=/statyi/v-$1/ [L,NC]
+  RewriteRule ^scheben/ce(.*)\.html$	/seo/proxy.php?url=/statyi/ce$1/ [L,NC]
+  
+  RewriteCond %{HTTP_HOST} !^www\.alfa-rostov\.ru$
+  RewriteCond %{HTTP_HOST} !^andrei\.alfa-rostov\.ru$
+  RewriteRule ^(.*)$ http://www.alfa-rostov.ru/$1 [R=301,L]
 
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-l
@@ -43,3 +49,4 @@ Redirect 301 /novosti.html /o-kompanii/novosti/
 Redirect 301 /stati.html /o-kompanii/stati/
 Redirect 301 /svoystva-schebnya.html /o-kompanii/stati/svoystva-shchebnya/
 Redirect 301 /tyirsa.html /nerudnye-materialy/tyrsa/tyrsa/
+

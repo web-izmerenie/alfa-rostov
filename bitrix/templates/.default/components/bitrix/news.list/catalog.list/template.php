@@ -25,7 +25,10 @@ if($section->SelectedRowsCount()){
         }
         foreach($arResult["ITEMS"] as $Item){
             $ItemName = preg_replace("/(\d+)-(\d+)/", "<span class='nowrap'>\$1-\$2</span>", $Item["NAME"]);
-            $ItemName = preg_replace("/сорт (\d+)/", "<span class='nowrap'>сорт \$1</span>", $ItemName);?>
+            $ItemName = preg_replace("/сорт (\d+)/", "<span class='nowrap'>сорт \$1</span>", $ItemName);
+            if($arSection['CODE'] == 'scheben')
+                $Item['DETAIL_PAGE_URL'] = str_replace('nerudnye-materialy/', '', $Item['DETAIL_PAGE_URL']);
+            ?>
             <div class="grid_element">
                 <a href="<?=$Item["DETAIL_PAGE_URL"]?>">
                     <span class="grid_element_img">

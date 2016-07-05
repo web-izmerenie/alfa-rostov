@@ -42,7 +42,11 @@
     <meta name="viewport" content="320px" />
     <?$APPLICATION->ShowMeta("keywords")?>
     <?$APPLICATION->ShowMeta("description")?>
-    <title><?$APPLICATION->ShowProperty("headertitle")?></title>
+    <?if(defined('SEO_ARTICLES')) {?>
+        <title><?=$APPLICATION->ShowTitle()?></title>
+    <?}else{?>
+        <title><?$APPLICATION->ShowProperty("headertitle")?></title>
+    <?}?>
     <!--[if IE 8]>
         <script>document.getElementsByTagName('html')[0].className += ' ie8';</script>
     <![endif]-->
@@ -91,7 +95,7 @@
               		"COUNT_ELEMENTS" => "Y",
               		"TOP_DEPTH" => "2",
               		"SECTION_FIELDS" => array("", ""),
-              		"SECTION_USER_FIELDS" => array("", ""),
+              		"SECTION_USER_FIELDS" => array("UF_ALTER_LINK", ""),
               		"VIEW_MODE" => "LIST",
               		"SHOW_PARENT_NAME" => "Y",
               		"SECTION_URL" => "",
@@ -107,31 +111,37 @@
 
             if(defined("SHOW_TITLE")){?>
             <div class="page_header"><?
-                if($user_title){?>
-            	<h1><?=$user_title?></h1><?
-                }else{
+                if(defined('SEO_ARTICLES')) {?>
+                    <h1><?=$APPLICATION->ShowTitle(false);?></h1>
+                <?} else {
+                    if ($user_title) {
+                        ?>
+                        <h1><?= $user_title ?></h1><?
+                    } else {
 
-                    /* if($pagetitle){?>
-                        <h1><?=$pagetitle?></h1><?
-                    }else{
-                        $filepath = stripos($_SERVER["PHP_SELF"], "urlrewrite") ? $_SERVER['REAL_FILE_PATH'] : $_SERVER["PHP_SELF"];
+                        /* if($pagetitle){?>
+                            <h1><?=$pagetitle?></h1><?
+                        }else{
+                            $filepath = stripos($_SERVER["PHP_SELF"], "urlrewrite") ? $_SERVER['REAL_FILE_PATH'] : $_SERVER["PHP_SELF"];
 
-                        $arFilepath = explode("/", $filepath);
-                        $lastIndex = count($arFilepath) - 1;
-                        if(stripos($arFilepath[$lastIndex], "php")){
-                            unset($arFilepath[$lastIndex]);
-                        }
-                        $filepath = implode("/", $arFilepath) . "/";
+                            $arFilepath = explode("/", $filepath);
+                            $lastIndex = count($arFilepath) - 1;
+                            if(stripos($arFilepath[$lastIndex], "php")){
+                                unset($arFilepath[$lastIndex]);
+                            }
+                            $filepath = implode("/", $arFilepath) . "/";
 
-                        $isInclude = include($_SERVER["DOCUMENT_ROOT"].$filepath.".section.php");
-                        if($isInclude){?>
-                            <h1><?=$sSectionName?></h1><?
-                        }else{?>
-                            <h1><?=$APPLICATION->ShowTitle()?></h1><?
-                        }
-                    } */?>
-                    <!--noindex-->
-                    <h1><?$APPLICATION->ShowProperty("pagetitle")?></h1><?
+                            $isInclude = include($_SERVER["DOCUMENT_ROOT"].$filepath.".section.php");
+                            if($isInclude){?>
+                                <h1><?=$sSectionName?></h1><?
+                            }else{?>
+                                <h1><?=$APPLICATION->ShowTitle()?></h1><?
+                            }
+                        } */
+                        ?>
+                        <!--noindex-->
+                        <h1><? $APPLICATION->ShowProperty("pagetitle") ?></h1><?
+                    }
                 }?>
                 <?if(defined('CALC_TITLE')){?>
                     <div class="calculation">

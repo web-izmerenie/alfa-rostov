@@ -12,7 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);?>
 <ul>
-	<?foreach ($arResult['SECTIONS'] as $arSection):?>
+	<?foreach ($arResult['SECTIONS'] as $arSection):
+		if($arSection['UF_ALTER_LINK'])
+			$arSection['SECTION_PAGE_URL'] = $arSection['UF_ALTER_LINK'];?>
 		<li>
 			<a href="<?=$arSection['SECTION_PAGE_URL'];?>"
 				<?if($_REQUEST['CODE'] == $arSection['CODE']):?>

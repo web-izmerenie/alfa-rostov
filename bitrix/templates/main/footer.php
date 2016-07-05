@@ -46,7 +46,11 @@
         "SHOW_BORDER" => false
      )
 );?>
-<div class="asessorname" data="Kgxk" style="display:none;">Dku<?php echo md5($_SERVER['HTTP_HOST'])?> -  Dku<?php echo md5($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])?></div>
+<div class="asessorname" data="Kgxk" style="display:none;">Dku<?php echo md5($_SERVER['HTTP_HOST'])?> -  Dku<?php echo md5($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'])?><br>
+<a href="/scheben/v-taganroge.html"></a><br/>
+<a href="/scheben/v-novocherkasske.html"></a><br/>
+<a href="/scheben/cena-za-tonnu.html"></a><br/>
+</div>
 </body>
 <?require($_SERVER["DOCUMENT_ROOT"]."/seo.php");?>
 </html>

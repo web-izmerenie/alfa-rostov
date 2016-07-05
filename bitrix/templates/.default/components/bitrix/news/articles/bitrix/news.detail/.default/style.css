@@ -1,0 +1,16 @@
+div.news-detail img.detail_picture
+{
+	float:left;
+	margin:0 8px 6px 1px;
+}
+.news-date-time
+{
+	color:#486DAA;
+}
+.seo_articles ul {
+	list-style: inherit;
+	margin-left: 30px;
+}
+.seo_articles a {
+	color: #fff;
+}

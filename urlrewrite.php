@@ -19,16 +19,16 @@ $arUrlRewrite = array(
 		"PATH" => "/nerudnye-materialy/sectionlist.php",
 	),
 	array(
+		"CONDITION" => "#^/scheben/([a-z-_0-9]+)/(.*)#",
+		"RULE" => "CODE=scheben&ELEMENT_CODE=\$1",
+		"ID" => "",
+		"PATH" => "/nerudnye-materialy/detail.php",
+	),
+	array(
 		"CONDITION" => "#^/([a-z-_0-9]+).html(.*)#",
 		"RULE" => "CODE=\$1",
 		"ID" => "",
 		"PATH" => "/nerudnye-materialy/itemlist.php",
-	),
-	array(
-		"CONDITION" => "#^/o-kompanii/novosti/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/o-kompanii/novosti/index.php",
 	),
 	array(
 		"CONDITION" => "#^/o-kompanii.html(.*)#",
@@ -37,10 +37,22 @@ $arUrlRewrite = array(
 		"PATH" => "/o-kompanii/index.php",
 	),
 	array(
+		"CONDITION" => "#^/o-kompanii/novosti/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/o-kompanii/novosti/index.php",
+	),
+	array(
 		"CONDITION" => "#^/o-kompanii/stati/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/o-kompanii/stati/index.php",
+	),
+	array(
+		"CONDITION" => "#^/robots.txt(\\?|\$)#",
+		"RULE" => "",
+		"ID" => "",
+		"PATH" => "/robots.php",
 	),
 	array(
 		"CONDITION" => "#^/novosti.html(.*)#",
@@ -55,10 +67,16 @@ $arUrlRewrite = array(
 		"PATH" => "/o-kompanii/stati/index.php",
 	),
 	array(
-		"CONDITION" => "#^/robots.txt(\\?|\$)#",
-		"RULE" => "",
+		"CONDITION" => "#^/scheben/(.*)#",
+		"RULE" => "CODE=scheben",
 		"ID" => "",
-		"PATH" => "/robots.php",
+		"PATH" => "/nerudnye-materialy/itemlist.php",
+	),
+	array(
+		"CONDITION" => "#^/statyi/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/statyi/index.php",
 	),
 );
 
