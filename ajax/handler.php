@@ -1,4 +1,4 @@
-﻿<?
+<?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 CModule::IncludeModule("iblock");
 //p($_POST);
@@ -45,7 +45,7 @@ if($_POST["weight"] < 10){
 }
 $cube = array(37, 39, 838, 839, 840, 841);
 $unit = in_array($_POST["id"], $cube) ? "м<sup>3</sup>" : "т";
-$unit_bottom = in_array($_POST["id"], $cube) ? "руб. за куб.м." : "руб. за тонну";
+$unit_bottom = in_array($_POST["id"], $cube) ? "руб. за куб.м." : "руб./т";
 $result["UNIT"] = $unit;
 $result["UNIT_BOTTOM"] = $unit_bottom;
 $res = CIBlockElement::GetList(

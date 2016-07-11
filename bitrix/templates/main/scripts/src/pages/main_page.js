@@ -15,6 +15,15 @@ $(function domReady() {
     counter = $Items.size();
     maxZindex = counter - 1;
     
+    function showPrice(){
+        if($('#weight').val() != '0'){
+            setTimeout(function(){
+                $(".not_price_for_me").fadeIn(500);
+            }, 1500);
+         }
+    }
+
+    
     function calc(){
         $.post(
             "/ajax/handler.php",
@@ -25,25 +34,49 @@ $(function domReady() {
             },
             function(data){
                 var result = JSON.parse(data);
-                $(".price_value").html(result.TOTAL_PRICE + " <span>руб.</span>");
+                $(".price_value").html("<span>Итого: </span>" + result.TOTAL_PRICE + " <span>руб.</span>");
                 $(".total_price_value").html(result.PRICE + " <span>руб. за тонну</span>");
                 $(".weight_wrapp span").html(result.UNIT);
                 $(".total_price_value span").html(result.UNIT_BOTTOM);
-                if(result.WEIGHT == 1){
-                    $(".alert").html("Не меньше 10 тонн");
+                showPrice();
+                 if($("#weight").val() >= 10 || $("#weight").val() == '0'){
+                     $(".alert").html("");
+                    $('#weight').css({'border':'1px solid #58585A'});
+                   
+                    
                 }else{
-                    $(".alert").html("");
+                    $(".alert").html("Не меньше 10 тонн");
+                    $('#weight').css({'border':'1px solid #F7D11F'}); 
+                    
                 }
-                var bailerClassRemove = $(".bailer_wrapper").attr("class").split(" ")[2];
+                
+                /*bailerClassRemove = $(".bailer_wrapper").attr("class").split(" ")[2];
                 $(".bailer_wrapper").removeClass(bailerClassRemove);
-                $(".bailer_wrapper").addClass(result.BAILER_CLASS);
+                $(".bailer_wrapper").addClass(result.BAILER_CLASS);*/
                 
                 var textureClassRemove = $(".main_track_wrapper").attr("class").split(" ")[1];
                 $(".main_track_wrapper").removeClass(textureClassRemove);
                 $(".main_track_wrapper").addClass(result.TEXTURE_CLASS);
-                
             }
         );          
+    }
+   
+    function hoverTitle(){
+                var $slideItem = $("body").find(".slideItem");
+        $.each($slideItem, function(){
+            var newtitle = $(this).attr("data-item-title") + " " + $(this).attr("data-item-promo");
+            
+            if($(this).hasClass("slideItemCenter")) 
+                newtitle = "";
+                
+            $(this).tooltip({
+                "content" : newtitle,
+                "position" : {
+                    "my": "center top", 
+                    "at": "center bottom-8"
+                }
+            });
+        });
     }
     
     function findMainElement(){
@@ -101,21 +134,7 @@ $(function domReady() {
             /* }, 100); */
         /* }, 100); */
         
-        var $slideItem = $("body").find(".slideItem");
-        $.each($slideItem, function(){
-            var newtitle = $(this).attr("data-item-title") + " " + $(this).attr("data-item-promo");
-            
-            if($(this).hasClass("slideItemCenter")) 
-                newtitle = "";
-                
-            $(this).tooltip({
-                "content" : newtitle,
-                "position" : {
-                    "my": "center top", 
-                    "at": "center bottom-8"
-                }
-            });
-        });
+        hoverTitle();
     }
     setTimeout(calc, 100);
     function startCarousel(){
@@ -139,13 +158,18 @@ $(function domReady() {
             before: function(){
                 $(".slideItemCenter").removeClass("slideItemCenter");
                 $(".selected_item_wrapper").css("opacity", "0");
-                $(".center_wrapper").css("opacity", "0");                
+                $(".center_wrapper").css("opacity", "0");
+                $('body>.ui-tooltip').remove();
+                $('.not_price_for_me').hide();
+                
             },
             after: function(){
                 findMainElement();
                 $(".weight_wrapp #weight").val("0");
                 $(".cars_counter").html("0");
+                $('body>.ui-tooltip').remove();
                 calc();
+                showPrice();
             }
         });    
     }   
@@ -153,6 +177,16 @@ $(function domReady() {
     
     startCarousel();
     
+    window.onload=function(){
+        if (location.hash.charAt(0) === '#' && location.hash.length > 1) {
+            var id = location.hash.replace(/^#([0-9]+)$/, '$1');
+            if (id.toString() === parseInt(id, 10).toString()) {
+                $('.slideItem[data-item-id="'+id+'"]').trigger('click');
+            }
+        }
+    };
+            
+
     $(window).on("resize", null, null, startCarousel);    
     
     setTimeout(findMainElement, 2); 
@@ -182,7 +216,8 @@ $(function domReady() {
         $(this).addClass("cursor");
         
     });
-    
+
+
     
     function carChanger(){        
         var weight = $weight.val();
@@ -243,12 +278,16 @@ $(function domReady() {
         $(".point_list").on("click", "li", function(){
             if($(this).hasClass("other_city")){
                 $("#showForm").text("Узнать стоимость");
-                $(".total_price_value").html("<div class='other_city_30'>МЫ рассчитаем стоимость <br /> в течение 1 мин.</div>");
-                $(".label_other_city").show();
+                $(".total_price_value").html("<div class='other_city_30'>Звоните прямо сейчас!<br><br>МЫ рассчитаем стоимость <br /> в течение 1 мин.<br><span>8 (863) 221-80-70</span></div>");
+                
+                //$(".label_other_city").show();
                 $(".price_value").hide();
+                $(".not_price_for_me").hide();
                 if($(this).children().val() === 'Другой...'){
                     $(this).children().val('');
+                     //$('.point_list').hide();
                 }
+               
             }else{
                 $("#showForm").text("Оформить заказ");
                 $(".total_price_value").show();
@@ -258,7 +297,7 @@ $(function domReady() {
                 var value = $(this).attr("data-value");
                 $("#destination_point").val(value);
                 $(".current_point span").text(title);
-                $("body").find(".point_list").hide();
+                $('.point_list').hide();
                 calc();
             }
         });
@@ -276,6 +315,7 @@ $(function domReady() {
                 $(this).val($(this).prev().text());
             }
         });
+        
     }
     function getInputValueEmpty($this){
         var val = $this.val();
@@ -294,6 +334,18 @@ $(function domReady() {
     $("#showForm").on("click", function(){
         $(this).hide();
         $(".main_form").slideDown(800);
+        $('.order_by_phone > h3').fadeOut(600);
+        $('.order_by_phone > p').fadeOut(600);
+        //$('.main_track_wrapper').css({'margin-top':'112px'});
+    });
+    var animationProcess = false;
+ $('.not_price_for_me').hover(function(){
+        if (animationProcess) return; else animationProcess = true;
+        $(this).width('180px').find('p').slideDown(600, function () { animationProcess = false; });
+    },function(){
+        if (animationProcess) return; else animationProcess = true;
+        $(this).find('p').slideUp(600);
+        $(this).animate({width:'130px'}, 600, function () { animationProcess = false; });
     });
     
     setTimeout(

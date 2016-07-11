@@ -188,7 +188,9 @@ $(function domReady() {
         return false;
     });
         
-    
+  $('#calc-summ').click(function(){
+    location.href = '/#'+$('main').attr('data-id');
+  });  
     
 }); // domReady
 }); // define

@@ -5,8 +5,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("pagetitle", "Контакты");
 $APPLICATION->SetPageProperty("headertitle", "Контакты");
 $APPLICATION->SetTitle("Контакты");
-?>
-<div class="section_standart section_standart_wide">
+?><div class="section_standart section_standart_wide">
     <main>
         <div class="box">
             <p>344116<br>г. Ростов-на-Дону<br>ул. 2-я Володарского, 76/23 А<br>офис 112</p>
@@ -20,7 +19,7 @@ $APPLICATION->SetTitle("Контакты");
         </div>
         <div class="box">
             <h4>Отдел продаж</h4>
-            <p>(863) 221-999-2</p>
+            <p> (863)221-80-70</p>
             <h4>Бухгалтерия</h4>
             <p>(863) 236-20-50, 256-555-2</p>
         </div>

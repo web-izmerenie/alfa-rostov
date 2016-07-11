@@ -1,6 +1,7 @@
 <?
 define("SHOW_TITLE", "Y");
 define("NR_MATERIALS", "Y");
+define("CALC_TITLE", "Y");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 CModule::IncludeModule("iblock");
@@ -9,8 +10,8 @@ CModule::IncludeModule("iblock");
         "SECTION_CODE" => $_REQUEST["CODE"]
     );
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"catalog.list", 
+	"bitrix:news.list",
+	"catalog.list",
 	array(
 		"IBLOCK_TYPE" => "lists",
 		"IBLOCK_ID" => "1",
@@ -25,7 +26,7 @@ CModule::IncludeModule("iblock");
 			1 => "",
 		),
 		"PROPERTY_CODE" => array(
-			0 => "",
+			0 => "ATT_PRICE",
 			1 => "",
 		),
 		"CHECK_DATES" => "Y",

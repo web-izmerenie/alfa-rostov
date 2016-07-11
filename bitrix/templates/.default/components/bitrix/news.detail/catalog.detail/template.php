@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-<main>
+<main data-id="<?=$arResult['ID'];?>">
+
 <div class="section_standart detail_text_photo_block">
     <div class="grid_element"><?
         $href = $_GET["ITEM_ONE"] ? "/nerudnye-materialy.html" : $arResult["SECTION"]["PATH"][0]["SECTION_PAGE_URL"]?>
@@ -125,7 +126,9 @@
         <?if($arResult['PROPERTIES']['ORDER_TITLE']['VALUE']){?>
         <span><?=$arResult['PROPERTIES']['ORDER_TITLE']['VALUE']?></span>
         <?}?>
-        <a href="tel:<?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?>" class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></a>
+        <a href="tel:<?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?>"
+        	onclick="yaCounter10759630.reachGoal('CALC_SUMM'); return true;"
+        	class="phone"><?=$arResult['PROPERTIES']['ORDER_PHONE']['VALUE']?></a>
     </div>
     <?}?>
 <!--    <span data-link="--><?//=SITE_DIR?><!--" class="large_button span_link">--><?//=GetMessage("CALC_BUTTON")?><!--</span>-->
