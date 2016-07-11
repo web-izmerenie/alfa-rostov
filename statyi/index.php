@@ -2,22 +2,14 @@
 define("CONTACTS", "Y");
 define("SHOW_TITLE", "Y");
 define("SEO_ARTICLES", "Y");
-<<<<<<< HEAD
 define("NR_MATERIALS_DETAIL", "Y");
 define("NR_MATERIALS_DETAIL_MOREICONS", "Y");
-=======
->>>>>>> b9f6293e49cde7e66cc0661fbf17a6146e510aed
 $user_title = "Статьи";
-
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Статьи");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news",
-<<<<<<< HEAD
 	"articles.product",
-=======
-	"articles",
->>>>>>> b9f6293e49cde7e66cc0661fbf17a6146e510aed
 	Array(
 		"IBLOCK_TYPE" => "service",
 		"IBLOCK_ID" => "9",
@@ -61,13 +53,8 @@ $APPLICATION->SetTitle("Статьи");
 		"META_DESCRIPTION" => "-",
 		"BROWSER_TITLE" => "-",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "",
-<<<<<<< HEAD
 		"DETAIL_FIELD_CODE" => array("PREVIEW_PICTURE","DETAIL_PICTURE","PREVIEW_TEXT"),
 		"DETAIL_PROPERTY_CODE" => array("MATERIAL"),
-=======
-		"DETAIL_FIELD_CODE" => array("",""),
-		"DETAIL_PROPERTY_CODE" => array("",""),
->>>>>>> b9f6293e49cde7e66cc0661fbf17a6146e510aed
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_PAGER_TITLE" => "Страница",
