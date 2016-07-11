@@ -60,6 +60,24 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/robots.php",
 	),
+	array(
+		"CONDITION" => "#^/stati.html(.*)#",
+		"RULE" => "CODE=\$1",
+		"ID" => "",
+		"PATH" => "/o-kompanii/stati/index.php",
+	),
+	array(
+		"CONDITION" => "#^/scheben/(.*)#",
+		"RULE" => "CODE=scheben",
+		"ID" => "",
+		"PATH" => "/nerudnye-materialy/itemlist.php",
+	),
+	array(
+		"CONDITION" => "#^/statyi/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/statyi/index.php",
+	),
 );
 
 ?>
