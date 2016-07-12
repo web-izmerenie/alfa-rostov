@@ -113,9 +113,10 @@
             <div class="page_header"><?
                 if(defined('SEO_ARTICLES')) {?>
                     <h1><?=$APPLICATION->ShowTitle(false);?></h1>
+				<?} elseif(defined('SHOW_FAKE_TITLE')) {?>
+					<div class="h1"><?=$APPLICATION->ShowTitle(false);?></div>
                 <?} else {
-                    if ($user_title) {
-                        ?>
+                    if ($user_title) {?>
                         <h1><?= $user_title ?></h1><?
                     } else {
 

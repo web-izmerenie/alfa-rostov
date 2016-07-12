@@ -1,7 +1,7 @@
 <?
 define("CONTACTS", "Y");
 define("SHOW_TITLE", "Y");
-define("SEO_ARTICLES", "Y");
+define("SHOW_FAKE_TITLE", "Y");
 define("NR_MATERIALS_DETAIL", "Y");
 define("NR_MATERIALS_DETAIL_MOREICONS", "Y");
 $user_title = "Статьи";
