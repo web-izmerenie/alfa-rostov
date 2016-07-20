@@ -8,5 +8,8 @@ Allow: /bitrix/templates/
 Disallow: /bitrix/
 Disallow: /node_modules/
 Disallow: /ie_old/
+Disallow: /ie_old/
+Disallow: /staty
+Disallow: *proxy*
 Host: www.alfa-rostov.ru
 <?endif?>

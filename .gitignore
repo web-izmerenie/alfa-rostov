@@ -22,6 +22,7 @@ o-kompanii/karery/index.php
 urlrewrite_.php
 
 index.html
+/*.xml
 
 # bitrix tmp dirs
 bitrix/cache
