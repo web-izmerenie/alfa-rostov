@@ -31,6 +31,8 @@
         $html_classes[] = "contacts";
     if(defined("ERROR_404"))
         $html_classes[] = "error_404";
+    if(defined("CHARITY"))
+        $html_classes[] = "charity";
 
     $html_classes = implode(" ", $html_classes);
 

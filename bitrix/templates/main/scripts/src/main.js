@@ -15,7 +15,7 @@ $(function domReady() {
                 /* short name aliases */
 
                 'jquery.cookie': 'libs/jquery.cookie-1.4.0',
-                
+
                 'get_val': 'basics/get_val',
                 'get_local_text': 'basics/get_local_text'
 
@@ -29,13 +29,14 @@ $(function domReady() {
     require(['pages/nr_materials_detail_moreicons']);
     require(['pages/article_detail_colblocks']);
     require(['pages/two_cols']);
+    require(['pages/charity']);
     if($("html").hasClass("contacts")){
         require(['pages/contacts']);
     }
     require(['pages/404']);
     if($("html").hasClass("main_page")){
         require(['/bitrix/templates/main/scripts/libs/jquery-mw-min.js']);
-        require(['/bitrix/templates/main/scripts/libs/jquerycarousel.js']);    
+        require(['/bitrix/templates/main/scripts/libs/jquerycarousel.js']);
         require(['pages/main_page']);
     }
 }); // domReady
