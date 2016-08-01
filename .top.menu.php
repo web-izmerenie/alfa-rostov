@@ -1,8 +1,22 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"Нерудные материалы", 
-		"/nerudnye-materialy.html", 
+		"О компании", 
+		"/o-kompanii/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Благотворительность", 
+		"/o-kompanii/blagotvoritelnost/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/kontaktnaya-informatsiya/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -15,15 +29,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"О компании", 
-		"/o-kompanii/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Контакты", 
-		"/kontaktnaya-informatsiya/", 
+		"Продукция", 
+		"/nerudnye-materialy.html", 
 		Array(), 
 		Array(), 
 		"" 

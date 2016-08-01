@@ -16,7 +16,6 @@
 
 @import "jqueryui";
 @import "jqueryuistructure";
-@import "carousel";
 @import "circle";
 /* === FONTS === */
 
@@ -338,6 +337,28 @@ html{
                     padding:0 0 0 30px;
                 }
             }
+
+            .footer_menu{
+              .topMenu();
+              height: 146px;
+              width: 100%;
+              text-align: center;
+
+              ul{
+                display: inline-block;
+                top: 46%;
+                position: relative;
+
+                li{
+                  margin-left: 28px;
+                  letter-spacing: 1px;
+
+                  &:first-child{
+                    margin: 0;
+                  }
+                }
+              }
+            }
         } //.main_wrapper
 
         footer{
@@ -346,13 +367,6 @@ html{
             width: 100%;
             position:relative;
             margin-top:-@footerHeight;
-
-            .footer_menu{
-              position: absolute;
-              top: 21px;
-              left: 44px - 26px;
-              .topMenu();
-            }
 
             .developer{
                 position:absolute;
