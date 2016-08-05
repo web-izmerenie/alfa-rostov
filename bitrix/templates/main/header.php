@@ -108,10 +108,10 @@
               	)
               );?>
             </nav>
-            <a class="call-module-window" href="#call-me">
+            <!-- <a class="call-module-window" href="#call-me">
               <img src="<?=SITE_TEMPLATE_PATH;?>/images/callme.png"/>
               <p>Позвоните мне</p>
-            </a>
+            </a> -->
         </header>
         <div class="wrapper"><?
 

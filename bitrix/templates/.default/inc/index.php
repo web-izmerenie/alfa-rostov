@@ -117,11 +117,11 @@
           МЫ рассчитаем стоимость в течение 1 мин. 8 (863) 221-80-70
         </div>
     </div>
-    <div class="order_form">
+    <!-- <div class="order_form">
       <h3>Оформите заказ по телефону: <span>8 (863) 221-80-70</span></h3>
       <p>или</p>
       <a class="call_form btn" href="#form_application">заказать онлайн</a>
-    </div>
+    </div> -->
   </div>
   <div class="order_by_phone">
       <div class="main_track_wrapper texture_8_darkgray">
